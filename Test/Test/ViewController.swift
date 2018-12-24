@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var linkRange = NSRange()
-
     @IBOutlet weak var lbTest: UILabel!
+    
+    var linkRange = NSRange()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        let input = "xyz Substring to detect abc After having several issues with this kind of stuff, using a lot of different librairies, etc... I found an "
+//        let input = "xyz Substring to detect abc After having several issues with this kind of stuff, using a lot of different librairies, etc... I found an "
         let linkStr = "Substring to detect"
-//        let input = "xyz Substring to detect abc"
+        let input = "xyz Substring to detect abc"
         
         lbTest.text = input
         
@@ -44,6 +44,7 @@ class ViewController: UIViewController {
             print("Success")
         }
     }
+    
 }
 
 extension UITapGestureRecognizer {
@@ -69,7 +70,7 @@ extension UITapGestureRecognizer {
         let locationOfTouchInLabel = self.location(in: label)
         let textBoundingBox = layoutManager.usedRect(for: textContainer)
         
-        let textContainerOffset = CGPoint(x: (labelSize.width - textBoundingBox.size.width) * 0.5 - textBoundingBox.origin.x, y: (labelSize.height - textBoundingBox.size.height) * 0.5 - textBoundingBox.origin.y)
+        let textContainerOffset = CGPoint(x: (labelSize.width - textBoundingBox.width) * 0.5 - textBoundingBox.origin.x, y: (labelSize.height - textBoundingBox.height) * 0.5 - textBoundingBox.origin.y)
         
         let locationOfTouchInTextContainer = CGPoint(x: locationOfTouchInLabel.x - textContainerOffset.x, y: locationOfTouchInLabel.y - textContainerOffset.y)
         let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInTextContainer, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
