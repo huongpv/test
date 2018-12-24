@@ -16,11 +16,9 @@ class Test2VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Test 2"
         tableView.register(UINib(nibName: "TestCell", bundle: nil), forCellReuseIdentifier: identifier)
     }
-
-
-
 }
 
 // MARK: - UITableViewDataSource
