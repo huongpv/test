@@ -10,79 +10,59 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var lbTest: UILabel!
-    
-    var linkRange = NSRange()
+    private let textView: UITextView = {
+        let textView = UITextView()
+        
+        // Setup UI for TextView
+        textView.backgroundColor = .clear
+        textView.isScrollEnabled = false
+        textView.isEditable = false
+        textView.textContainerInset = .zero
+        textView.textContainer.lineFragmentPadding = 0
+        
+        // Setup text and link for TextView
+        let mutableAttributedString = NSMutableAttributedString(string: "More ways to shop: Visit an Apple Store, call 1-800-MY-APPLE, or find a reseller.")
+        mutableAttributedString.setAsLink(textToFind: "Apple Store", linkName: "AppleStoreLink")
+        mutableAttributedString.setAsLink(textToFind: "1-800-MY-APPLE", linkName: "ApplePhoneNumber")
+        mutableAttributedString.setAsLink(textToFind: "find a reseller", linkName: "FindReseller")
+        
+        textView.attributedText = mutableAttributedString
+        return textView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let input = "xyz Substring to detect abc After having several issues with this kind of stuff, using a lot of different librairies, etc... I found an "
-        let linkStr = "Substring to detect"
-        let input = "xyz Substring to detect abc"
-        
-        lbTest.text = input
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapLabel(tap:)))
-        self.lbTest.addGestureRecognizer(tap)
-        self.lbTest.isUserInteractionEnabled = true
-        
-        
-        let attributedString = NSMutableAttributedString(string: input)
-    
-        guard let range = input.range(of: linkStr)?.nsRange else { return }
-        linkRange = range
-        
-        attributedString.addAttribute(.link, value: linkStr, range: range)
-        lbTest.attributedText = attributedString
+        textView.frame = CGRect(x: 0, y: 200, width: view.frame.width, height: 200)
+        textView.delegate = self
+        view.addSubview(textView)
     }
+}
 
-    @objc func tapLabel(tap: UITapGestureRecognizer) {
-        if tap.didTapAttributedTextInLabel(label: lbTest, inRange: linkRange) {
-            // Substring tapped
-            
-            print("Success")
+extension NSMutableAttributedString {
+    func setAsLink(textToFind:String, linkName:String) {
+        let foundRange = mutableString.range(of: textToFind)
+        if foundRange.location != NSNotFound {
+            addAttribute(NSAttributedString.Key.link, value: linkName, range: foundRange)
         }
     }
-    
 }
 
-extension UITapGestureRecognizer {
-    
-    func didTapAttributedTextInLabel(label: UILabel, inRange targetRange: NSRange) -> Bool {
-        // Create instances of NSLayoutManager, NSTextContainer and NSTextStorage
-        let layoutManager = NSLayoutManager()
-        let textContainer = NSTextContainer(size: CGSize.zero)
-        let textStorage = NSTextStorage(attributedString: label.attributedText!)
-        
-        // Configure layoutManager and textStorage
-        layoutManager.addTextContainer(textContainer)
-        textStorage.addLayoutManager(layoutManager)
-        
-        // Configure textContainer
-        textContainer.lineFragmentPadding = 0.0
-        textContainer.lineBreakMode = label.lineBreakMode
-        textContainer.maximumNumberOfLines = label.numberOfLines
-        let labelSize = label.bounds.size
-        textContainer.size = labelSize
-        
-        // Find the tapped character location and compare it to the specified range
-        let locationOfTouchInLabel = self.location(in: label)
-        let textBoundingBox = layoutManager.usedRect(for: textContainer)
-        
-        let textContainerOffset = CGPoint(x: (labelSize.width - textBoundingBox.width) * 0.5 - textBoundingBox.origin.x, y: (labelSize.height - textBoundingBox.height) * 0.5 - textBoundingBox.origin.y)
-        
-        let locationOfTouchInTextContainer = CGPoint(x: locationOfTouchInLabel.x - textContainerOffset.x, y: locationOfTouchInLabel.y - textContainerOffset.y)
-        let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInTextContainer, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-        return NSLocationInRange(indexOfCharacter, targetRange)
-    }
-    
-}
-
-extension Range where Bound == String.Index {
-    var nsRange:NSRange {
-        return NSRange(location: self.lowerBound.encodedOffset,
-                       length: self.upperBound.encodedOffset -
-                        self.lowerBound.encodedOffset)
+extension ViewController: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        if URL.absoluteString == "AppleStoreLink" {
+            // Handle action tap on AppleStoreLink
+            print("Go to Apple Store")
+            return true
+        } else if URL.absoluteString == "ApplePhoneNumber" {
+            // Handle action tap on ApplePhoneNumber
+            print("Call to Apple Phone")
+            return true
+        } else if URL.absoluteString == "FindReseller" {
+            // Handle action tap on FindReseller
+            print("Find a Reseller")
+            return true
+        }
+        return false
     }
 }
