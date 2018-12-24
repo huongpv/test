@@ -12,6 +12,9 @@
 		006D93A321CCA4D100429237 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A121CCA4D100429237 /* Main.storyboard */; };
 		006D93A521CCA4D300429237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A421CCA4D300429237 /* Assets.xcassets */; };
 		006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A621CCA4D300429237 /* LaunchScreen.storyboard */; };
+		00E3B27F21D0755300563BD2 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3B27E21D0755300563BD2 /* TestVC.swift */; };
+		00E3B28221D0757400563BD2 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3B28021D0757400563BD2 /* TestCell.swift */; };
+		00E3B28321D0757400563BD2 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B28121D0757400563BD2 /* TestCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		006D93A421CCA4D300429237 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006D93A721CCA4D300429237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		006D93A921CCA4D300429237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E3B27E21D0755300563BD2 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		00E3B28021D0757400563BD2 /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		00E3B28121D0757400563BD2 /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				006D93A421CCA4D300429237 /* Assets.xcassets */,
 				006D93A621CCA4D300429237 /* LaunchScreen.storyboard */,
 				006D93A921CCA4D300429237 /* Info.plist */,
+				00E3B27E21D0755300563BD2 /* TestVC.swift */,
+				00E3B28021D0757400563BD2 /* TestCell.swift */,
+				00E3B28121D0757400563BD2 /* TestCell.xib */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -123,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */,
+				00E3B28321D0757400563BD2 /* TestCell.xib in Resources */,
 				006D93A521CCA4D300429237 /* Assets.xcassets in Resources */,
 				006D93A321CCA4D100429237 /* Main.storyboard in Resources */,
 			);
@@ -136,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				006D93A021CCA4D100429237 /* ViewController.swift in Sources */,
+				00E3B28221D0757400563BD2 /* TestCell.swift in Sources */,
+				00E3B27F21D0755300563BD2 /* TestVC.swift in Sources */,
 				006D939E21CCA4D100429237 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
