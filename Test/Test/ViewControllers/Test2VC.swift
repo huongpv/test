@@ -16,7 +16,7 @@ class Test2VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Test 2"
+        navigationItem.title = "Test Change commit by rebase"
         tableView.register(UINib(nibName: "TestCell", bundle: nil), forCellReuseIdentifier: identifier)
         print("Test Request Merge")
     }
