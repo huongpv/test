@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         let testVC = Test2VC(nibName: "Test2VC", bundle: nil)
-        window?.rootViewController = testVC
+        let navController = UINavigationController(rootViewController: testVC)
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
         return true
