@@ -32,16 +32,20 @@ class TestVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .clear
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
-        tableView.registerNibCellFor(type: FooterCell.self)
-        tableView.separatorStyle = .singleLine
+        tableView.registerNibCellFor(type: TestCell.self)
+        tableView.separatorStyle = .none
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-        tableView.tableFooterView = UIView()
         
         // headerView
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 267)
         let headerView = HeaderView(frame: frame)
         tableView.tableHeaderView = headerView
+        
+        // footerView
+        let footerFrame = CGRect(x: 0, y: 20, width: view.frame.width, height: 35)
+        let footerView = FooterView(frame: footerFrame)
+        tableView.tableFooterView = footerView
+        
     }
 
     // MARK: - Table view data source
@@ -56,22 +60,14 @@ class TestVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 2 {
-            let cell = tableView.reusableCell(type: FooterCell.self)!
-            cell.contentView.backgroundColor = .clear
-            cell.backgroundColor = .clear
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 999)
-            cell.selectionStyle = .none
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-            cell.backgroundColor = .clear
-            cell.textLabel?.textColor = .white
-            cell.accessoryType = .disclosureIndicator
-            cell.selectionStyle = .none
-            cell.textLabel?.text = "ABC"
-            return cell
-        }
+        let cell = tableView.reusableCell(type: TestCell.self)!
+        cell.lbTitle.textColor = .white
+        cell.lbTitle.text = "ABC"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

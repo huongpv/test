@@ -16,9 +16,11 @@
 		00F3F13622266FE00041D683 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F13522266FE00041D683 /* UIView+Extension.swift */; };
 		00F3F13A222670590041D683 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F139222670590041D683 /* GradientLayer.swift */; };
 		00F3F13C222670A70041D683 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F13B222670A60041D683 /* UIColor+Extension.swift */; };
-		00F3F1472226756E0041D683 /* FooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F3F1452226756E0041D683 /* FooterCell.xib */; };
-		00F3F1482226756E0041D683 /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F1462226756E0041D683 /* FooterCell.swift */; };
 		00F3F14A222676260041D683 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F149222676260041D683 /* UITableView+Extension.swift */; };
+		00F3F152222692900041D683 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F151222692900041D683 /* FooterView.swift */; };
+		00F3F1542226929B0041D683 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F3F1532226929B0041D683 /* FooterView.xib */; };
+		00F3F15722269C180041D683 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F15522269C180041D683 /* TestCell.swift */; };
+		00F3F15822269C180041D683 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F3F15622269C180041D683 /* TestCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +35,11 @@
 		00F3F13522266FE00041D683 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		00F3F139222670590041D683 /* GradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		00F3F13B222670A60041D683 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		00F3F1452226756E0041D683 /* FooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterCell.xib; sourceTree = "<group>"; };
-		00F3F1462226756E0041D683 /* FooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
 		00F3F149222676260041D683 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		00F3F151222692900041D683 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		00F3F1532226929B0041D683 /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
+		00F3F15522269C180041D683 /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		00F3F15622269C180041D683 /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		00E3B28C21D07E6B00563BD2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				00F3F1502226927D0041D683 /* FooterView */,
 				00F3F1442226756E0041D683 /* Cell */,
 				00F3F12F2226678C0041D683 /* HeaderView */,
 				00E3B27E21D0755300563BD2 /* TestVC.swift */,
@@ -127,10 +132,19 @@
 		00F3F1442226756E0041D683 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				00F3F1452226756E0041D683 /* FooterCell.xib */,
-				00F3F1462226756E0041D683 /* FooterCell.swift */,
+				00F3F15522269C180041D683 /* TestCell.swift */,
+				00F3F15622269C180041D683 /* TestCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		00F3F1502226927D0041D683 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				00F3F151222692900041D683 /* FooterView.swift */,
+				00F3F1532226929B0041D683 /* FooterView.xib */,
+			);
+			path = FooterView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +207,9 @@
 			files = (
 				00F3F133222667BC0041D683 /* HeaderView.xib in Resources */,
 				006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */,
-				00F3F1472226756E0041D683 /* FooterCell.xib in Resources */,
+				00F3F1542226929B0041D683 /* FooterView.xib in Resources */,
 				006D93A521CCA4D300429237 /* Assets.xcassets in Resources */,
+				00F3F15822269C180041D683 /* TestCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,11 +221,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E3B27F21D0755300563BD2 /* TestVC.swift in Sources */,
-				00F3F1482226756E0041D683 /* FooterCell.swift in Sources */,
 				00F3F14A222676260041D683 /* UITableView+Extension.swift in Sources */,
+				00F3F152222692900041D683 /* FooterView.swift in Sources */,
 				00F3F13A222670590041D683 /* GradientLayer.swift in Sources */,
 				00F3F131222667AD0041D683 /* HeaderView.swift in Sources */,
 				00F3F13C222670A70041D683 /* UIColor+Extension.swift in Sources */,
+				00F3F15722269C180041D683 /* TestCell.swift in Sources */,
 				00F3F13622266FE00041D683 /* UIView+Extension.swift in Sources */,
 				006D939E21CCA4D100429237 /* AppDelegate.swift in Sources */,
 			);
