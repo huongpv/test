@@ -21,6 +21,8 @@
 		00F3F1542226929B0041D683 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F3F1532226929B0041D683 /* FooterView.xib */; };
 		00F3F15722269C180041D683 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F15522269C180041D683 /* TestCell.swift */; };
 		00F3F15822269C180041D683 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F3F15622269C180041D683 /* TestCell.xib */; };
+		FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */; };
+		FA9B68292226D05500D9387C /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B68282226D05500D9387C /* UINavigationBar+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		00F3F1532226929B0041D683 /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		00F3F15522269C180041D683 /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 		00F3F15622269C180041D683 /* TestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
+		FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extension.swift"; sourceTree = "<group>"; };
+		FA9B68282226D05500D9387C /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				00F3F13B222670A60041D683 /* UIColor+Extension.swift */,
 				00F3F13522266FE00041D683 /* UIView+Extension.swift */,
 				00F3F149222676260041D683 /* UITableView+Extension.swift */,
+				FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */,
+				FA9B68282226D05500D9387C /* UINavigationBar+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,7 +228,9 @@
 			files = (
 				00E3B27F21D0755300563BD2 /* TestVC.swift in Sources */,
 				00F3F14A222676260041D683 /* UITableView+Extension.swift in Sources */,
+				FA9B68292226D05500D9387C /* UINavigationBar+Extension.swift in Sources */,
 				00F3F152222692900041D683 /* FooterView.swift in Sources */,
+				FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */,
 				00F3F13A222670590041D683 /* GradientLayer.swift in Sources */,
 				00F3F131222667AD0041D683 /* HeaderView.swift in Sources */,
 				00F3F13C222670A70041D683 /* UIColor+Extension.swift in Sources */,

@@ -47,8 +47,10 @@ enum GradientDirection: Int {
 class GradientLayer: CAGradientLayer {
     
     // MARK: - Init
-    convenience init(startColor: UIColor, endColor: UIColor, direction: GradientDirection) {
+    convenience init(frame: CGRect, startColor: UIColor, endColor: UIColor, direction: GradientDirection) {
         self.init()
+        
+        self.frame = frame
         
         // Update points
         startPoint = direction.draw().x

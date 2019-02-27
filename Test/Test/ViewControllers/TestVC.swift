@@ -16,6 +16,7 @@ class TestVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.setGradientBackgroundNav(startColor: .green, endColor: .blue, gradientDirection: .leftToRight)
         
         navigationItem.title = "Hồ sơ"
         
@@ -42,7 +43,7 @@ class TestVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.tableHeaderView = headerView
         
         // footerView
-        let footerFrame = CGRect(x: 0, y: 20, width: view.frame.width, height: 35)
+        let footerFrame = CGRect(x: 0, y: 20, width: view.frame.width, height: 37)
         let footerView = FooterView(frame: footerFrame)
         tableView.tableFooterView = footerView
         
