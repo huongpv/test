@@ -15,6 +15,9 @@ class HeaderView: UIView {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnRegister: UIButton!
     
+    @IBOutlet weak var stackLoginRegisView: UIStackView!
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -68,6 +71,9 @@ class HeaderView: UIView {
         // btnRegister
         btnRegister.setCorner(20)
         btnRegister.setGradientBackground(startColor: .green, endColor: .blue, gradientDirection: .leftToRight)
+        
+        // stackView
+        stackLoginRegisView.spacing = (frame.width - 30 - btnLogin.frame.width * 2) / 3
     }
 
 }
