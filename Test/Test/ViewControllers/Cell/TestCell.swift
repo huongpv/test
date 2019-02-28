@@ -7,20 +7,27 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TestCell: UITableViewCell {
 
+    @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbTime: UILabel!
+    @IBOutlet weak var imgStatus: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setupView(notification: Notification) {
+        if let urlStr = notification.coverUrl, let url = URL(string: urlStr) {
+            imgProfile.sd_setImage(with: url, completed: nil)
+        }
+        lbTitle.text = notification.content
+        lbTime.text = notification.publishedAt
+        imgStatus.isHidden = notification.readStatus ?? true
     }
     
 }

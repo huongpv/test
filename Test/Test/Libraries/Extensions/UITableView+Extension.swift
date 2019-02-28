@@ -10,6 +10,15 @@ import UIKit
 
 extension UITableView {
     
+    // MARK: - Register functions
+    func setup(input: UITableViewDataSource & UITableViewDelegate) {
+        delegate = input
+        dataSource = input
+        separatorStyle = .none
+        showsVerticalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
+    }
+    
     func registerNibCellFor<T: UITableViewCell>(type: T.Type) {
         let nibName = UIView.getNameFor(type: type)
         register(UINib(nibName: nibName, bundle: nil), forCellReuseIdentifier: nibName)
