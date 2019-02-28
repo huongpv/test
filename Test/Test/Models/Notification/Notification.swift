@@ -15,4 +15,11 @@ struct Notification {
     var readStatus: Bool?
     var publishedAt: String?
     var url: String?
+    
+    init(content: String, coverUrl: String, readStatus: Bool, publishedAt: String) {
+        self.content = content
+        self.coverUrl = coverUrl
+        self.readStatus = readStatus
+        self.publishedAt = publishedAt
+    }
 }

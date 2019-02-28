@@ -8,4 +8,7 @@ target 'Test' do
   # Pods for Test
   # Used for loading and caching images
   pod 'SDWebImage', '~> 4.0'
+  
+  # Used for caculate time
+  pod 'NSDate+TimeAgo'
 end

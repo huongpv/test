@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import NSDate_TimeAgo
 
 class TestCell: UITableViewCell {
 
@@ -18,7 +19,8 @@ class TestCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        imgProfile.setCorner(27)
     }
 
     func setupView(notification: Notification) {
@@ -26,7 +28,10 @@ class TestCell: UITableViewCell {
             imgProfile.sd_setImage(with: url, completed: nil)
         }
         lbTitle.text = notification.content
-        lbTime.text = notification.publishedAt
+        if let dateStr = notification.publishedAt, let date = Date.dateWithAllFormat(dateStr: dateStr) {
+            let dateObj = date as NSDate
+            lbTime.text = dateObj.timeAgo()
+        }
         imgStatus.isHidden = notification.readStatus ?? true
     }
     

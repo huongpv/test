@@ -11,6 +11,10 @@
 		006D93A521CCA4D300429237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A421CCA4D300429237 /* Assets.xcassets */; };
 		006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A621CCA4D300429237 /* LaunchScreen.storyboard */; };
 		00CF66982227912B00C8FC27 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66972227912B00C8FC27 /* Notification.swift */; };
+		00CF669A2227C53D00C8FC27 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66992227C53D00C8FC27 /* Date+Extension.swift */; };
+		00CF669C2227C59D00C8FC27 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF669B2227C59C00C8FC27 /* String+Extension.swift */; };
+		00CF669F2227C77200C8FC27 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF669E2227C77200C8FC27 /* DateFormat.swift */; };
+		00CF66A12227C78D00C8FC27 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A02227C78D00C8FC27 /* Date+Ex.swift */; };
 		00E3B27F21D0755300563BD2 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3B27E21D0755300563BD2 /* TestVC.swift */; };
 		00F3F13622266FE00041D683 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F13522266FE00041D683 /* UIView+Extension.swift */; };
 		00F3F13A222670590041D683 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F139222670590041D683 /* GradientLayer.swift */; };
@@ -30,6 +34,10 @@
 		006D93A721CCA4D300429237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		006D93A921CCA4D300429237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00CF66972227912B00C8FC27 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		00CF66992227C53D00C8FC27 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		00CF669B2227C59C00C8FC27 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		00CF669E2227C77200C8FC27 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		00CF66A02227C78D00C8FC27 /* Date+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		00E3B27E21D0755300563BD2 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		00F3F13522266FE00041D683 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		00F3F139222670590041D683 /* GradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
@@ -77,6 +85,7 @@
 		006D939C21CCA4D100429237 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				00CF669D2227C74600C8FC27 /* Helper */,
 				00F3F137222670380041D683 /* Libraries */,
 				00CF6695222790FE00C8FC27 /* Models */,
 				00E3B28C21D07E6B00563BD2 /* ViewControllers */,
@@ -104,6 +113,14 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		00CF669D2227C74600C8FC27 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				00CF669E2227C77200C8FC27 /* DateFormat.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		00E3B28C21D07E6B00563BD2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +133,9 @@
 		00F3F13422266FD20041D683 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				00CF669B2227C59C00C8FC27 /* String+Extension.swift */,
+				00CF66992227C53D00C8FC27 /* Date+Extension.swift */,
+				00CF66A02227C78D00C8FC27 /* Date+Ex.swift */,
 				00F3F13B222670A60041D683 /* UIColor+Extension.swift */,
 				00F3F13522266FE00041D683 /* UIView+Extension.swift */,
 				00F3F149222676260041D683 /* UITableView+Extension.swift */,
@@ -262,10 +282,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Test/Pods-Test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NSDate+TimeAgo/NSDate_TimeAgo.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSDate_TimeAgo.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,9 +303,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E3B27F21D0755300563BD2 /* TestVC.swift in Sources */,
+				00CF669A2227C53D00C8FC27 /* Date+Extension.swift in Sources */,
 				00F3F14A222676260041D683 /* UITableView+Extension.swift in Sources */,
 				FA9B68292226D05500D9387C /* UINavigationBar+Extension.swift in Sources */,
+				00CF66A12227C78D00C8FC27 /* Date+Ex.swift in Sources */,
+				00CF669C2227C59D00C8FC27 /* String+Extension.swift in Sources */,
 				FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */,
+				00CF669F2227C77200C8FC27 /* DateFormat.swift in Sources */,
 				00F3F13A222670590041D683 /* GradientLayer.swift in Sources */,
 				00F3F13C222670A70041D683 /* UIColor+Extension.swift in Sources */,
 				00CF66982227912B00C8FC27 /* Notification.swift in Sources */,
