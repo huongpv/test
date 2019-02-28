@@ -11,14 +11,15 @@ import UIKit
 class TestVC: UITableViewController {
     
     // MARK: -Variables
-    var notifications = [Notification]()
-    
+    private let notificationPresenter = NotificationPresenter(notificationService: NotificationService())
+    private var notifications = [Notification]()
 
     // Mark: -View life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        makeMockData()
+        notificationPresenter.attachViewController(self)
+        notificationPresenter.getNotifications()
         
         navigationController?.navigationBar.setGradientBackgroundNav(startColor: .green, endColor: .blue, gradientDirection: .leftToRight)
         
@@ -48,11 +49,20 @@ class TestVC: UITableViewController {
         print("ABC")
     }
     
-    private func makeMockData() {
-        notifications = [Notification(content: "Cảm thấy hài lòng về thái độ tận tâm, tận lực khám chữa bệnh của các bác sỹ ở bệnh viện TW Cảm thấy hài lòng về thái độ tận tâm ...", coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale", readStatus: false, publishedAt: "28/02/2019"),
-                         Notification(content: "Cảm thấy hài lòng về thái độ tận tâm", coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale", readStatus: false, publishedAt: "27/02/2019"),
-                         Notification(content: "Cảm thấy hài lòng về thái độ tận tâm, tận lực khám chữa bệnh của các bác sỹ", coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale", readStatus: false, publishedAt: "26/02/2019"),
-                         Notification(content: "Cảm thấy hài lòng về thái độ tận tâm, tận lực khám chữa bệnh của các bác sỹ ở bệnh viện TW Cảm thấy hài lòng về thái độ tận tâm ...", coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale", readStatus: true, publishedAt: "22/02/2019"),
-                         Notification(content: "Cảm thấy hài lòng về thái độ tận tâm, tận lực khám chữa bệnh của các bác sỹ ở bệnh viện TW Cảm thấy hài lòng về thái độ tận tâm ...", coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale", readStatus: true, publishedAt: "21/02/2019")]
+}
+
+extension TestVC: NotificationProtocol {
+    func startLoading() {
+        IndicatorViewer.show()
     }
+    
+    func finishLoading() {
+        IndicatorViewer.hide()
+    }
+    
+    func setNotifications(_ notifications: [Notification]) {
+        self.notifications = notifications
+        tableView.reloadData()
+    }
+    
 }

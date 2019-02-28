@@ -6,9 +6,13 @@ target 'Test' do
   use_frameworks!
 
   # Pods for Test
+  
   # Used for loading and caching images
   pod 'SDWebImage', '~> 4.0'
   
   # Used for caculate time
   pod 'NSDate+TimeAgo'
+  
+  # Used for show progress view
+  pod 'SVProgressHUD'
 end
