@@ -54,30 +54,16 @@ extension Date {
         return components().second
     }
         
-    var weekDayTextInEnglish: String? {
+    var weekDayText: String? {
         let weekday = self.weekday
         switch weekday {
-        case 2: return "weekday_monday_en".localized
-        case 3: return "weekday_tuesday_en".localized
-        case 4: return "weekday_wednesday_en".localized
-        case 5: return "weekday_thursday_en".localized
-        case 6: return "weekday_friday_en".localized
-        case 7: return "weekday_saturday_en".localized
-        case 1: return "weekday_sunday_en".localized
-        default: return nil
-        }
-    }
-    
-    var weekDayTextInJapanese: String? {
-        let weekday = self.weekday
-        switch weekday {
-        case 2: return "weekday_monday_jp".localized
-        case 3: return "weekday_tuesday_jp".localized
-        case 4: return "weekday_wednesday_jp".localized
-        case 5: return "weekday_thursday_jp".localized
-        case 6: return "weekday_friday_jp".localized
-        case 7: return "weekday_saturday_jp".localized
-        case 1: return "weekday_sunday_jp".localized
+        case 2: return "weekday_monday".localized
+        case 3: return "weekday_tuesday".localized
+        case 4: return "weekday_wednesday".localized
+        case 5: return "weekday_thursday".localized
+        case 6: return "weekday_friday".localized
+        case 7: return "weekday_saturday".localized
+        case 1: return "weekday_sunday".localized
         default: return nil
         }
     }

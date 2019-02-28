@@ -1,0 +1,63 @@
+/* 
+  Localizable.strings
+  Test
+
+  Created by vinhdd on 10/9/18.
+  Copyright © 2018 vinhdd. All rights reserved.
+*/
+
+// MARK: - General
+"ok" = "OK";
+"yes" = "はい";
+"no" = "いいえ";
+"close" = "閉じる";
+"back" = "戻る";
+"cancel" = "キャンセル";
+"login" = "ログイン";
+"retry" = "やり直す";
+"done" = "完了";
+"error" = "エラー";
+
+// MARK: - Date and time (JSON parser)
+"date_time_json_parser_format" = "yyyy/MM/dd HH:mm:ss";
+"date_time_json_parser_2_format" = "yyyy-MM-dd HH:mm:ss";
+"date_time_json_parser_3_format" = "yyyy/MM/dd HH:mm";
+"date_time_json_parser_4_format" = "yyyy-MM-dd HH:mm";
+
+"date_json_parser_format" = "yyyy/MM/dd";
+"date_json_parser_2_format" = "yyyy-MM-dd";
+
+"time_json_parser_format" = "HH:mm:ss";
+"time_json_parser_2_format" = "HH:mm";
+
+// MARK: - Date and time (general)
+
+"weekday_monday" = "月";
+"weekday_tuesday" = "火";
+"weekday_wednesday" = "水";
+"weekday_thursday" = "木";
+"weekday_friday" = "金";
+"weekday_saturday" = "土";
+"weekday_sunday" = "日";
+
+"year_jp" = "年";
+"month_jp" = "月";
+"day_jp" = "日";
+
+"year_month_day_weekday_format_jp" = "%i年%.02i月%.02i日 (%@)";
+"year_month_day_weekday_format_2_jp" = "%i年%i月%i日 (%@)";
+
+"year_month_day_format_jp" = "%i年%.02i月%.02i日";
+"year_month_day_format_2_jp" = "%i年%i月%i日";
+
+"year_month_format_jp" = "%i年%.02i月";
+"year_month_format_2_jp" = "%i年%i月";
+
+"month_day_format_jp" = "%.02i月%.02i日";
+"month_day_format_2_jp" = "%i月%i日";
+
+"hour_minute_second_format_jp" = "%.02i時%.02i分%.02i秒";
+"hour_minute_second_format_2_jp" = "%i時%i分%i秒";
+
+"hour_minute_format_jp" = "%.02i時%.02i分";
+"hour_minute_format_2_jp" = "%i時%i分";
