@@ -11,8 +11,8 @@ import UIKit
 class DiaryVC: UITableViewController {
     
     // MARK: -Variables
-    private let notificationPresenter = NotificationPresenter(notificationService: NotificationService())
-    private var notifications = [Notification]()
+    private let diaryPresenter = DiaryPresenter(diaryService: DiaryService())
+    private var diarys = [Diary]()
 
     // Mark: -View life cycles
     override func viewDidLoad() {
@@ -21,8 +21,8 @@ class DiaryVC: UITableViewController {
         let backgroundImage = UIImage(named: "wallpaper")
         view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
         
-        notificationPresenter.attachViewController(self)
-        notificationPresenter.getNotifications()
+        diaryPresenter.attachViewController(self)
+        diaryPresenter.getDiarys()
         
         navigationController?.navigationBar.setGradientBackgroundNav(startColor: .green, endColor: .blue, gradientDirection: .leftToRight)
         
@@ -31,19 +31,19 @@ class DiaryVC: UITableViewController {
         tableView.setup(input: self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
-        tableView.registerNibCellFor(type: TestCell.self)
+        tableView.registerNibCellFor(type: DiaryCell.self)
     }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return notifications.count
+        return diarys.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let notification = notifications[indexPath.row]
-        let cell = tableView.reusableCell(type: TestCell.self)!
-        cell.setupView(notification: notification)
+        let diary = diarys[indexPath.row]
+        let cell = tableView.reusableCell(type: DiaryCell.self)!
+        cell.setupView(diary: diary)
         return cell
     }
     
@@ -54,7 +54,7 @@ class DiaryVC: UITableViewController {
     
 }
 
-extension DiaryVC: NotificationProtocol {
+extension DiaryVC: DiaryProtocol {
     func startLoading() {
         IndicatorViewer.show()
     }
@@ -63,8 +63,8 @@ extension DiaryVC: NotificationProtocol {
         IndicatorViewer.hide()
     }
     
-    func setNotifications(_ notifications: [Notification]) {
-        self.notifications = notifications
+    func setDiarys(_ diarys: [Diary]) {
+        self.diarys = diarys
         tableView.reloadData()
     }
     

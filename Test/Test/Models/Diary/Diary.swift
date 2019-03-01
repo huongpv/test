@@ -1,5 +1,5 @@
 //
-//  Notification.swift
+//  Diary.swift
 //  Test
 //
 //  Created by huongpv on 2/28/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Notification {
+struct Diary {
     var id: Int?
     var title: String?
     var content: String?
