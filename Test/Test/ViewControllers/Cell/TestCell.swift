@@ -8,7 +8,6 @@
 
 import UIKit
 import SDWebImage
-import NSDate_TimeAgo
 
 class TestCell: UITableViewCell {
 
@@ -27,18 +26,8 @@ class TestCell: UITableViewCell {
         if let urlStr = notification.coverUrl, let url = URL(string: urlStr) {
             imgProfile.sd_setImage(with: url, completed: nil)
         }
-        
         lbTitle.text = notification.content
-        
-        if let dateStr = notification.publishedAt, let date = Date.dateWithAllFormat(dateStr: dateStr) {
-            let dateObj = date as NSDate
-            var timeStr = dateObj.timeAgo()
-            if let timeStrMutable = timeStr, (timeStrMutable.contains("ngày trước") || timeStrMutable.contains("days ago")) {
-                timeStr = date.weekDayText
-            }
-            lbTime.text = timeStr
-        }
-        
+        lbTime.text = notification.timeAgo
         imgStatus.isHidden = notification.readStatus ?? true
     }
     

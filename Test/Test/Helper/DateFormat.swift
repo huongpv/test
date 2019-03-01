@@ -10,8 +10,9 @@ import Foundation
 
 struct DateFormat {
     static let baseFormat = "yyyy-MM-dd"
-    static let dateTimeFormat2 = "dd/MM/yyyy"
+    static let dateTimeFormat3 = "dd/MM/yyyy"
+    static let dateTimeFormat2 = "dd/MM/yyyy HH:mm:ss"
     static let dateTimeFormat1 = "yyyy-MM-dd HH:mm:ss"
     
-    static let allFormat: [String] = [dateTimeFormat1, dateTimeFormat2, baseFormat]
+    static let allFormat: [String] = [dateTimeFormat1, dateTimeFormat2, dateTimeFormat3, baseFormat]
 }

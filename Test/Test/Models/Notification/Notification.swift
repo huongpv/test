@@ -16,6 +16,19 @@ struct Notification {
     var publishedAt: String?
     var url: String?
     
+    // Use for language device (Vietname, English)
+    var timeAgo: String? {
+        if let dateStr = publishedAt, let date = Date.dateWithAllFormat(dateStr: dateStr) {
+            let dateObj = date as NSDate
+            var timeStr = dateObj.timeAgo()
+            if let timeStrMutable = timeStr, (timeStrMutable.contains("ngày trước") || timeStrMutable.contains("days ago")) {
+                timeStr = date.weekDayText
+            }
+            return timeStr
+        }
+        return nil
+    }
+    
     init(content: String, coverUrl: String, readStatus: Bool, publishedAt: String) {
         self.content = content
         self.coverUrl = coverUrl

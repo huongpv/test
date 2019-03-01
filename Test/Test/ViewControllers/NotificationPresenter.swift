@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol NotificationProtocol: NSObjectProtocol {
+protocol NotificationProtocol: class {
     func startLoading()
     func finishLoading()
     func setNotifications(_ notifications: [Notification])
