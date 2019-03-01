@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NSDate_TimeAgo
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
