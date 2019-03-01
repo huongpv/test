@@ -16,7 +16,7 @@ struct Notification {
     var publishedAt: String?
     var url: String?
     
-    // Use for language device (Vietname, English)
+    // Use for language device (Vietname)
     var timeAgo: String? {
         if let dateStr = publishedAt, let date = Date.dateBy(string: dateStr, format: DateFormat.dateTimeWithDash) {
             return date.formattedAsTimeAgo()
