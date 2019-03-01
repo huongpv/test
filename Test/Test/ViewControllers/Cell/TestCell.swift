@@ -13,8 +13,10 @@ class TestCell: UITableViewCell {
 
     @IBOutlet weak var imgProfile: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbMood: UILabel!
+    @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var lbTime: UILabel!
-    @IBOutlet weak var imgStatus: UIImageView!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +28,10 @@ class TestCell: UITableViewCell {
         if let urlStr = notification.coverUrl, let url = URL(string: urlStr) {
             imgProfile.sd_setImage(with: url, completed: nil)
         }
-        lbTitle.text = notification.content
+        lbTitle.text = notification.title
+        lbMood.text = notification.mood
+        lbContent.text = notification.content
         lbTime.text = notification.timeAgo
-        imgStatus.isHidden = notification.readStatus ?? true
     }
     
 }

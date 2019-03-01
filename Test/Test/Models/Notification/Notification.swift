@@ -10,10 +10,11 @@ import Foundation
 
 struct Notification {
     var id: Int?
+    var title: String?
     var content: String?
     var coverUrl: String?
-    var readStatus: Bool?
     var publishedAt: String?
+    var mood: String?
     var url: String?
     
     // Use for language device (Vietname)
@@ -24,10 +25,11 @@ struct Notification {
         return nil
     }
     
-    init(content: String, coverUrl: String, readStatus: Bool, publishedAt: String) {
+    init(title: String, content: String, coverUrl: String, mood: String, publishedAt: String) {
+        self.title = title
         self.content = content
         self.coverUrl = coverUrl
-        self.readStatus = readStatus
+        self.mood = mood
         self.publishedAt = publishedAt
     }
 }

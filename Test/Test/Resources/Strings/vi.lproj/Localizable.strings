@@ -6,6 +6,9 @@
   Copyright © 2018 vinhdd. All rights reserved.
 */
 
+// Diary
+"my_diary" = "Nhật kí của tôi";
+
 // MARK: - General
 "ok" = "OK";
 "yes" = "はい";

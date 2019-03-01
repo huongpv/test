@@ -18,7 +18,7 @@
 		00CF66A62227DAEE00C8FC27 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A52227DAEE00C8FC27 /* NotificationPresenter.swift */; };
 		00CF66A92227DF9100C8FC27 /* IndicatorViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A82227DF9100C8FC27 /* IndicatorViewer.swift */; };
 		00CF66AE2227E6C500C8FC27 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00CF66B02227E6C500C8FC27 /* Localizable.strings */; };
-		00E3B27F21D0755300563BD2 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3B27E21D0755300563BD2 /* TestVC.swift */; };
+		00E3B27F21D0755300563BD2 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3B27E21D0755300563BD2 /* DiaryVC.swift */; };
 		00F0D0E52228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0D0E42228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift */; };
 		00F3F13622266FE00041D683 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F13522266FE00041D683 /* UIView+Extension.swift */; };
 		00F3F13A222670590041D683 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F139222670590041D683 /* GradientLayer.swift */; };
@@ -49,7 +49,7 @@
 		00CF66B22227E73A00C8FC27 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00CF66B32227EA9800C8FC27 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		00CF66B42227EA9800C8FC27 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		00E3B27E21D0755300563BD2 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		00E3B27E21D0755300563BD2 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
 		00F0D0E42228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FacebookTimeAgo+Ex.swift"; sourceTree = "<group>"; };
 		00F3F13522266FE00041D683 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		00F3F139222670590041D683 /* GradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				00CF66A52227DAEE00C8FC27 /* NotificationPresenter.swift */,
-				00E3B27E21D0755300563BD2 /* TestVC.swift */,
+				00E3B27E21D0755300563BD2 /* DiaryVC.swift */,
 				00F3F1442226756E0041D683 /* Cell */,
 			);
 			path = ViewControllers;
@@ -354,7 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CF66A92227DF9100C8FC27 /* IndicatorViewer.swift in Sources */,
-				00E3B27F21D0755300563BD2 /* TestVC.swift in Sources */,
+				00E3B27F21D0755300563BD2 /* DiaryVC.swift in Sources */,
 				00CF669A2227C53D00C8FC27 /* Date+Extension.swift in Sources */,
 				00F3F14A222676260041D683 /* UITableView+Extension.swift in Sources */,
 				FA9B68292226D05500D9387C /* UINavigationBar+Extension.swift in Sources */,

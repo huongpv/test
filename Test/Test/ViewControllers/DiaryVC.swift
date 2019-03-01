@@ -1,5 +1,5 @@
 //
-//  TestVC.swift
+//  DiaryVC.swift
 //  Test
 //
 //  Created by huongpv on 12/24/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestVC: UITableViewController {
+class DiaryVC: UITableViewController {
     
     // MARK: -Variables
     private let notificationPresenter = NotificationPresenter(notificationService: NotificationService())
@@ -23,7 +23,7 @@ class TestVC: UITableViewController {
         
         navigationController?.navigationBar.setGradientBackgroundNav(startColor: .green, endColor: .blue, gradientDirection: .leftToRight)
         
-        navigationItem.title = "Notifications"
+        navigationItem.title = "my_diary".localized
         
         tableView.setup(input: self)
         tableView.rowHeight = UITableView.automaticDimension
@@ -51,7 +51,7 @@ class TestVC: UITableViewController {
     
 }
 
-extension TestVC: NotificationProtocol {
+extension DiaryVC: NotificationProtocol {
     func startLoading() {
         IndicatorViewer.show()
     }
