@@ -10,11 +10,10 @@
 		006D939E21CCA4D100429237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D939D21CCA4D100429237 /* AppDelegate.swift */; };
 		006D93A521CCA4D300429237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A421CCA4D300429237 /* Assets.xcassets */; };
 		006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A621CCA4D300429237 /* LaunchScreen.storyboard */; };
+		009EEE992229072700D8FB8B /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EEE982229072700D8FB8B /* DateFormat.swift */; };
 		00CF66982227912B00C8FC27 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66972227912B00C8FC27 /* Notification.swift */; };
 		00CF669A2227C53D00C8FC27 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66992227C53D00C8FC27 /* Date+Extension.swift */; };
 		00CF669C2227C59D00C8FC27 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF669B2227C59C00C8FC27 /* String+Extension.swift */; };
-		00CF669F2227C77200C8FC27 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF669E2227C77200C8FC27 /* DateFormat.swift */; };
-		00CF66A12227C78D00C8FC27 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A02227C78D00C8FC27 /* Date+Ex.swift */; };
 		00CF66A42227DA2C00C8FC27 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A32227DA2C00C8FC27 /* NotificationService.swift */; };
 		00CF66A62227DAEE00C8FC27 /* NotificationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A52227DAEE00C8FC27 /* NotificationPresenter.swift */; };
 		00CF66A92227DF9100C8FC27 /* IndicatorViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A82227DF9100C8FC27 /* IndicatorViewer.swift */; };
@@ -38,11 +37,10 @@
 		006D93A421CCA4D300429237 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006D93A721CCA4D300429237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		006D93A921CCA4D300429237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		009EEE982229072700D8FB8B /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		00CF66972227912B00C8FC27 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		00CF66992227C53D00C8FC27 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		00CF669B2227C59C00C8FC27 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		00CF669E2227C77200C8FC27 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
-		00CF66A02227C78D00C8FC27 /* Date+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		00CF66A32227DA2C00C8FC27 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		00CF66A52227DAEE00C8FC27 /* NotificationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPresenter.swift; sourceTree = "<group>"; };
 		00CF66A82227DF9100C8FC27 /* IndicatorViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorViewer.swift; sourceTree = "<group>"; };
@@ -99,8 +97,8 @@
 		006D939C21CCA4D100429237 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				009EEE972229070600D8FB8B /* Constants */,
 				00CF66AA2227E4E500C8FC27 /* Resources */,
-				00CF669D2227C74600C8FC27 /* Helper */,
 				00F3F137222670380041D683 /* Libraries */,
 				00CF66A22227DA0B00C8FC27 /* MockData */,
 				00CF6695222790FE00C8FC27 /* Models */,
@@ -111,6 +109,14 @@
 				006D93A921CCA4D300429237 /* Info.plist */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		009EEE972229070600D8FB8B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				009EEE982229072700D8FB8B /* DateFormat.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		00CF6695222790FE00C8FC27 /* Models */ = {
@@ -127,14 +133,6 @@
 				00CF66972227912B00C8FC27 /* Notification.swift */,
 			);
 			path = Notification;
-			sourceTree = "<group>";
-		};
-		00CF669D2227C74600C8FC27 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				00CF669E2227C77200C8FC27 /* DateFormat.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		00CF66A22227DA0B00C8FC27 /* MockData */ = {
@@ -184,7 +182,6 @@
 			children = (
 				00CF669B2227C59C00C8FC27 /* String+Extension.swift */,
 				00CF66992227C53D00C8FC27 /* Date+Extension.swift */,
-				00CF66A02227C78D00C8FC27 /* Date+Ex.swift */,
 				00F0D0E42228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift */,
 				00F3F13B222670A60041D683 /* UIColor+Extension.swift */,
 				00F3F13522266FE00041D683 /* UIView+Extension.swift */,
@@ -361,12 +358,11 @@
 				00CF669A2227C53D00C8FC27 /* Date+Extension.swift in Sources */,
 				00F3F14A222676260041D683 /* UITableView+Extension.swift in Sources */,
 				FA9B68292226D05500D9387C /* UINavigationBar+Extension.swift in Sources */,
-				00CF66A12227C78D00C8FC27 /* Date+Ex.swift in Sources */,
+				009EEE992229072700D8FB8B /* DateFormat.swift in Sources */,
 				00F0D0E52228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift in Sources */,
 				00CF66A62227DAEE00C8FC27 /* NotificationPresenter.swift in Sources */,
 				00CF669C2227C59D00C8FC27 /* String+Extension.swift in Sources */,
 				FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */,
-				00CF669F2227C77200C8FC27 /* DateFormat.swift in Sources */,
 				00F3F13A222670590041D683 /* GradientLayer.swift in Sources */,
 				00F3F13C222670A70041D683 /* UIColor+Extension.swift in Sources */,
 				00CF66982227912B00C8FC27 /* Notification.swift in Sources */,
