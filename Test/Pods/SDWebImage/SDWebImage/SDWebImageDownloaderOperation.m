@@ -10,7 +10,6 @@
 #import "SDWebImageManager.h"
 #import "NSImage+WebCache.h"
 #import "SDWebImageCodersManager.h"
-#import "UIImage+MultiFormat.h"
 
 #define LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
 #define UNLOCK(lock) dispatch_semaphore_signal(lock);
@@ -419,9 +418,8 @@ didReceiveResponse:(NSURLResponse *)response
                             NSString *key = [[SDWebImageManager sharedManager] cacheKeyForURL:self.request.URL];
                             image = [self scaledImageForKey:key image:image];
                             
-                            // Do not force decoding animated images or GIF,
-                            // because there has imageCoder which can change `image` or `imageData` to static image, lose the animated feature totally.
-                            BOOL shouldDecode = !image.images && image.sd_imageFormat != SDImageFormatGIF;
+                            // Do not force decoding animated images
+                            BOOL shouldDecode = !image.images;
                             if (shouldDecode) {
                                 if (self.shouldDecompressImages) {
                                     BOOL shouldScaleDown = self.options & SDWebImageDownloaderScaleDownLargeImages;

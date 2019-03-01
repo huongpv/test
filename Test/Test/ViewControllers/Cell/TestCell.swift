@@ -29,7 +29,9 @@ class TestCell: UITableViewCell {
             imgProfile.sd_setImage(with: url, completed: nil)
         }
         lbTitle.text = notification.title
+        print(lbTitle.font.fontName)
         lbMood.text = notification.mood
+        print(lbMood.font.fontName)
         lbContent.text = notification.content
         lbTime.text = notification.timeAgo
     }

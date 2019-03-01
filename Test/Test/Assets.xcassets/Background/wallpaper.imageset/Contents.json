@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "wallpaper.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "wallpaper.pnp.jpg",
       "scale" : "2x"
     },
     {

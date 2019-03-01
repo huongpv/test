@@ -18,6 +18,9 @@ class DiaryVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backgroundImage = UIImage(named: "wallpaper")
+        view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
+        
         notificationPresenter.attachViewController(self)
         notificationPresenter.getNotifications()
         
