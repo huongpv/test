@@ -13,23 +13,28 @@ struct Diary {
     var title: String?
     var content: String?
     var coverUrl: String?
-    var publishedAt: String?
+    var dateStr: String?
     var mood: String?
     var url: String?
     
-    // Use for language device (Vietname)
-    var timeAgo: String? {
-        if let dateStr = publishedAt, let date = Date.dateBy(string: dateStr, format: DateFormat.dateTimeWithDash) {
-            return date.formattedAsTimeAgo()
+    var publishedAt: Date? {
+        if let dateStr = dateStr {
+            return Date.dateBy(string: dateStr, format: DateFormat.dateTimeWithDash)
         }
+        
         return nil
     }
     
-    init(title: String, content: String, coverUrl: String, mood: String, publishedAt: String) {
+    // Use for language device (Vietname)
+    var timeAgo: String? {
+        return publishedAt?.formattedAsTimeAgo()
+    }
+    
+    init(title: String, content: String, coverUrl: String, mood: String, dateStr: String) {
         self.title = title
         self.content = content
         self.coverUrl = coverUrl
         self.mood = mood
-        self.publishedAt = publishedAt
+        self.dateStr = dateStr
     }
 }

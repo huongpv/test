@@ -11,6 +11,6 @@ import Foundation
 struct DateFormat {
     static let baseDateWithDash = "yyyy-MM-dd"
     static let baseDateWithSlash = "dd/MM/yyyy"
-    static let dateTimeWithDash = "dd/MM/yyyy HH:mm:ss"
-    static let dateTimeWithSlash = "yyyy-MM-dd HH:mm:ss"
+    static let dateTimeWithDash = "yyyy-MM-dd HH:mm:ss"
+    static let dateTimeWithSlash = "dd/MM/yyyy HH:mm:ss"
 }

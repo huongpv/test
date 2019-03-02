@@ -169,6 +169,26 @@ extension Date {
         return calendar.isDate(self, inSameDayAs: date)
     }
     
+    func getComponents(calendar: Calendar = Date.currentCalendar, timeZone: TimeZone = Date.currentTimeZone) -> DateComponents {
+        let dateComponents = DateComponents(calendar: calendar,
+                                            timeZone: timeZone,
+                                            era: calendar.component(.era, from: self),
+                                            year: calendar.component(.year, from: self),
+                                            month: calendar.component(.month, from: self),
+                                            day: calendar.component(.day, from: self),
+                                            hour: calendar.component(.hour, from: self),
+                                            minute: calendar.component(.minute, from: self),
+                                            second: calendar.component(.second, from: self),
+                                            nanosecond: calendar.component(.nanosecond, from: self),
+                                            weekday: calendar.component(.weekday, from: self),
+                                            weekdayOrdinal: calendar.component(.weekdayOrdinal, from: self),
+                                            quarter: calendar.component(.quarter, from: self),
+                                            weekOfMonth: calendar.component(.weekOfMonth, from: self),
+                                            weekOfYear: calendar.component(.weekOfYear, from: self),
+                                            yearForWeekOfYear: calendar.component(.yearForWeekOfYear, from: self))
+        return dateComponents
+    }
+    
     func components(calendar: Calendar = Date.currentCalendar, timeZone: TimeZone = Date.currentTimeZone) -> DateComponents {
         let dateComponents = DateComponents(calendar: calendar,
                                             timeZone: timeZone,

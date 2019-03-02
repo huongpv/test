@@ -23,14 +23,14 @@ class DiaryCell: UITableViewCell {
         imgProfile.setCorner(25)
     }
 
-    func setupView(diary: Diary) {
-        if let urlStr = diary.coverUrl, let url = URL(string: urlStr) {
+    func setupView(diaryDB: DiaryDB) {
+        if let urlStr = diaryDB.coverUrl, let url = URL(string: urlStr) {
             imgProfile.sd_setImage(with: url, completed: nil)
         }
-        lbTitle.text = diary.title
-        lbMood.text = diary.mood
-        lbContent.text = diary.content
-        lbTime.text = diary.timeAgo
+        lbTitle.text = diaryDB.title
+        lbMood.text = diaryDB.mood
+        lbContent.text = diaryDB.content
+        lbTime.text = diaryDB.publishedAt?.formattedAsTimeAgo()
     }
     
 }

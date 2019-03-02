@@ -12,17 +12,17 @@ class DiaryVC: UITableViewController {
     
     // MARK: -Variables
     private let diaryPresenter = DiaryPresenter(diaryService: DiaryService())
-    private var diarys = [Diary]()
+    private var diarys = [DiaryDB]()
 
     // Mark: -View life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backgroundImage = UIImage(named: "wallpaper")
-        view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
+        setupPlusButtonInNavBar(selector: #selector(handleAddDiary))
+        
+        setViewBackgroundColor()
         
         diaryPresenter.attachViewController(self)
-        diaryPresenter.getDiarys()
         
         navigationController?.navigationBar.setGradientBackgroundNav(startColor: .green, endColor: .blue, gradientDirection: .leftToRight)
         
@@ -33,6 +33,13 @@ class DiaryVC: UITableViewController {
         tableView.estimatedRowHeight = 70
         tableView.registerNibCellFor(type: DiaryCell.self)
     }
+    
+    @objc func handleAddDiary() {
+        let createDiaryVC = CreateDiaryVC()
+        createDiaryVC.delegate = self
+        //let navController = UINavigationController(rootViewController: createDiaryVC)
+        navigationController?.pushViewController(createDiaryVC, animated: true)
+    }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,20 +48,26 @@ class DiaryVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let diary = diarys[indexPath.row]
+        let diaryDB = diarys[indexPath.row]
         let cell = tableView.reusableCell(type: DiaryCell.self)!
-        cell.setupView(diary: diary)
+        cell.setupView(diaryDB: diaryDB)
         return cell
     }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("ABC")
+        let diaryDB = diarys[indexPath.row]
+        let createDiaryVC = CreateDiaryVC()
+        createDiaryVC.delegate = self
+        createDiaryVC.diaryDB = diaryDB
+        VCService.push(controller: createDiaryVC)
     }
     
 }
 
+// MARK: -DiaryProtocol
 extension DiaryVC: DiaryProtocol {
+    
     func startLoading() {
         IndicatorViewer.show()
     }
@@ -63,9 +76,26 @@ extension DiaryVC: DiaryProtocol {
         IndicatorViewer.hide()
     }
     
-    func setDiarys(_ diarys: [Diary]) {
+    func setDiarys(_ diarys: [DiaryDB]) {
         self.diarys = diarys
         tableView.reloadData()
+    }
+    
+}
+
+// MARK: -CreateDiaryDelegate
+extension DiaryVC: CreateDiaryDelegate {
+    func didAddDiary(diary: DiaryDB) {
+        diarys.append(diary)
+        let newIndexPath = IndexPath(row: diarys.count - 1, section: 0)
+        tableView.insertRows(at: [newIndexPath], with: .automatic)
+        tableView.scrollToBottom()
+    }
+    
+    func didUpdateDiary(diary: DiaryDB) {
+        let index = diarys.index(of: diary)
+        let indexPath = IndexPath(row: index!, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .middle)
     }
     
 }

@@ -24,4 +24,28 @@ extension UIViewController {
         }
         return controller
     }
+    
+    func setupPlusButtonInNavBar(selector: Selector) {
+        let rightBarItem = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: selector)
+        navigationItem.rightBarButtonItem = rightBarItem
+    }
+    
+    func setupSaveButtonInNavBar(selector: Selector) {
+        let rightBarItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: selector)
+        navigationItem.rightBarButtonItem = rightBarItem
+    }
+    
+    func setupCancelButtonInNavBar() {
+        let leftBarItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+        navigationItem.leftBarButtonItem = leftBarItem
+    }
+    
+    @objc private func handleCancel() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func setViewBackgroundColor(string: String = "wallpaper") {
+        let backgroundImage = UIImage(named: string)
+        view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
+    }
 }

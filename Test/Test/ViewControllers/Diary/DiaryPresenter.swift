@@ -11,7 +11,7 @@ import Foundation
 protocol DiaryProtocol: class {
     func startLoading()
     func finishLoading()
-    func setDiarys(_ diarys: [Diary])
+    func setDiarys(_ diarys: [DiaryDB])
 }
 
 class DiaryPresenter {
@@ -24,6 +24,7 @@ class DiaryPresenter {
     
     func attachViewController(_ viewController: DiaryProtocol){
         diaryViewProtocol = viewController
+        getDiarys()
     }
     
     func detachView() {
@@ -32,9 +33,8 @@ class DiaryPresenter {
     
     func getDiarys() {
         diaryViewProtocol?.startLoading()
-        diaryService.getDiaryServices { [weak self] diarys in
-            self?.diaryViewProtocol?.finishLoading()
-            self?.diaryViewProtocol?.setDiarys(diarys)
-        }
+        let diarys = CoreDataManager.shared.fetchDiarys()
+        diaryViewProtocol?.setDiarys(diarys)
+        diaryViewProtocol?.finishLoading()
     }
 }
