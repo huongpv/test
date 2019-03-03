@@ -29,9 +29,9 @@ class CreateDiaryPresenter {
         createDiaryViewProtocol = nil
     }
     
-    func addDiaryToServer(diary: Diary, callback: @escaping (_ diarys: DiaryDB?, _ error: Error?) -> Void) {
+    func addDiaryToServer(uid: String, diary: Diary, callback: @escaping (_ diarys: DiaryDB?, _ error: Error?) -> Void) {
         createDiaryViewProtocol?.startLoading()
-        diaryService.addDiaryToServer(diary: diary) { (error) in
+        diaryService.addDiaryToServer(uid: uid, diary: diary) { (error) in
             self.createDiaryViewProtocol?.finishLoading()
             if let error = error {
                 callback(nil, error)

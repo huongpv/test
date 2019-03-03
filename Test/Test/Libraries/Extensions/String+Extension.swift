@@ -8,6 +8,7 @@
 
 import UIKit
 import CommonCrypto
+import CryptoSwift
 
 // General enum list
 enum RandomStringType: String {
@@ -70,31 +71,31 @@ extension String {
         return digestData.map { String(format: "%02hhx", $0) }.joined()
     }
     
-//    var encryptAES: String? {
-//        let key = "mwLZH3hyy6jKR0AP"
-//        let iv = "FWmn6Yu5KXPUKZrp"
-//        do {
-//            if let data = self.data(using: .utf8) {
-//                let encrypted = try AES(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: .pkcs7).encrypt([UInt8](data))
-//                let encryptedString = Data(encrypted).base64EncodedString()
-//                return encryptedString
-//            }
-//        } catch { }
-//        return nil
-//    }
+    var encryptAES: String? {
+        let key = "mwLZH3hyy6jKR0AP"
+        let iv = "FWmn6Yu5KXPUKZrp"
+        do {
+            if let data = self.data(using: .utf8) {
+                let encrypted = try AES(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: .pkcs7).encrypt([UInt8](data))
+                let encryptedString = Data(encrypted).base64EncodedString()
+                return encryptedString
+            }
+        } catch { }
+        return nil
+    }
 
-//    var decryptAES: String? {
-//        let key = "mwLZH3hyy6jKR0AP"
-//        let iv = "FWmn6Yu5KXPUKZrp"
-//        do {
-//            if let data = Data(base64Encoded: self) {
-//                let decrypted = try AES(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: .pkcs7).decrypt([UInt8](data))
-//                let decryptedString = String(bytes: Data(decrypted).bytes, encoding: .utf8)
-//                return decryptedString
-//            }
-//        } catch { }
-//        return nil
-//    }
+    var decryptAES: String? {
+        let key = "mwLZH3hyy6jKR0AP"
+        let iv = "FWmn6Yu5KXPUKZrp"
+        do {
+            if let data = Data(base64Encoded: self) {
+                let decrypted = try AES(key: key.bytes, blockMode: CBC(iv: iv.bytes), padding: .pkcs7).decrypt([UInt8](data))
+                let decryptedString = String(bytes: Data(decrypted).bytes, encoding: .utf8)
+                return decryptedString
+            }
+        } catch { }
+        return nil
+    }
     
     var hasSpecialCharacters: Bool {
         let regex = "(?=.*[A-Za-z0-9]).{8,}"

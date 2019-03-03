@@ -21,7 +21,7 @@ struct CoreDataManager {
         return container
     }()
     
-    private func saveDiaries(diaries: [Diary]) {
+    func saveDiaries(diaries: [Diary]) {
         let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         privateContext.parent = CoreDataManager.shared.persistenContainer.viewContext
         

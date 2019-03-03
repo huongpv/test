@@ -7,31 +7,33 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginVC: UIViewController {
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    
+    // MARK: -Private
+    private let loginPresenter = LoginPresenter(diaryService: DiaryService())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-
     
     @IBAction func btnLogin(_ sender: Any) {
         let email = txtEmail.text ?? ""
         let password = txtPassword.text ?? ""
         
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+        loginPresenter.login(email: email, password: password) { (uid, error) in
             if let error = error {
                 UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Lỗi sai tài khoản hoặc mật khẩu \(error)", cancelButtonTitle: "Ok", handler: nil)
-            } else if let user = authResult?.user {
-                UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Đăng nhập thành công \(user.email ?? "")", cancelButtonTitle: "Ok", handler: nil)
+            } else if let uid = uid {
+                UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Đăng nhập thành công \(uid)", cancelButtonTitle: "Ok", handler: nil)
             }
         }
+    
     }
     
 }

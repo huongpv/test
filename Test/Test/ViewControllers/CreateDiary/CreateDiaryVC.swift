@@ -64,8 +64,12 @@ class CreateDiaryVC: UIViewController {
         let content = tvContent.text
         let coverUrl = "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale"
         let diary = Diary(title: title ?? "", content: content ?? "", coverUrl: coverUrl, mood: mood, publishedAt: date)
+        guard let uid = SharedData.accessToken else {
+            UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Chưa đăng nhập tài khoản, vui lòng đăng nhập", cancelButtonTitle: "Ok", handler: nil)
+            return
+        }
         
-        createDiaryPresenter.addDiaryToServer(diary: diary) { (diaryDB, error) in
+        createDiaryPresenter.addDiaryToServer(uid: uid, diary: diary) { (diaryDB, error) in
             if let error = error {
                 print(error)
             } else {
