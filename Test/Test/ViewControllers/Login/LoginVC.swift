@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginVC: UIViewController {
 
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +20,18 @@ class LoginVC: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func btnLogin(_ sender: Any) {
+        let email = txtEmail.text ?? ""
+        let password = txtPassword.text ?? ""
+        
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Lỗi sai tài khoản hoặc mật khẩu \(error)", cancelButtonTitle: "Ok", handler: nil)
+            } else if let user = authResult?.user {
+                UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Đăng nhập thành công \(user.email ?? "")", cancelButtonTitle: "Ok", handler: nil)
+            }
+        }
     }
-    */
-
+    
 }

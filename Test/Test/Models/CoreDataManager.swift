@@ -21,6 +21,28 @@ struct CoreDataManager {
         return container
     }()
     
+    private func saveDiaries(diaries: [Diary]) {
+        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateContext.parent = CoreDataManager.shared.persistenContainer.viewContext
+        
+        diaries.forEach({ (jsonDiary) in
+            let newDiary = DiaryDB(context: privateContext)
+            
+            newDiary.title = jsonDiary.title
+            newDiary.content = jsonDiary.content
+            newDiary.coverUrl = jsonDiary.coverUrl
+            newDiary.mood = jsonDiary.mood
+            newDiary.publishedAt = jsonDiary.publishedAt
+        })
+        
+        do {
+            try privateContext.save()
+            try privateContext.parent?.save()
+        } catch let err {
+            print("\(err.localizedDescription)")
+        }
+    }
+    
     // Diary
     func fetchDiarys() -> [DiaryDB] {
         let context = persistenContainer.viewContext

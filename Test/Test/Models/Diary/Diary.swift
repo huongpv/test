@@ -13,28 +13,28 @@ struct Diary {
     var title: String?
     var content: String?
     var coverUrl: String?
-    var dateStr: String?
     var mood: String?
     var url: String?
-    
-    var publishedAt: Date? {
-        if let dateStr = dateStr {
-            return Date.dateBy(string: dateStr, format: DateFormat.dateTimeWithDash)
-        }
-        
-        return nil
-    }
+    var publishedAt: Date?
     
     // Use for language device (Vietname)
     var timeAgo: String? {
         return publishedAt?.formattedAsTimeAgo()
     }
     
-    init(title: String, content: String, coverUrl: String, mood: String, dateStr: String) {
+    init(title: String, content: String, coverUrl: String, mood: String, publishedAt: Date) {
         self.title = title
         self.content = content
         self.coverUrl = coverUrl
         self.mood = mood
-        self.dateStr = dateStr
+        self.publishedAt = publishedAt
+    }
+    
+    init(json: [String: Any]) {
+        self.title = json["title"] as? String ?? ""
+        self.content = json["content"] as? String ?? ""
+        self.coverUrl = json["coverUrl"] as? String ?? ""
+        self.mood = json["mood"] as? String ?? ""
+        self.publishedAt = json["publishedAt"] as? Date ?? Date()
     }
 }

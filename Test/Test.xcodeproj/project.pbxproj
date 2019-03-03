@@ -41,6 +41,7 @@
 		FA43CDFE222A445E00542E94 /* RetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43CDFB222A445E00542E94 /* RetryHandler.swift */; };
 		FA43CDFF222A445E00542E94 /* AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43CDFC222A445E00542E94 /* AutoLayoutHelper.swift */; };
 		FA43CE02222A4F7C00542E94 /* CreateDiaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43CE01222A4F7C00542E94 /* CreateDiaryPresenter.swift */; };
+		FA43CE04222ACEB900542E94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA43CE03222ACEB900542E94 /* GoogleService-Info.plist */; };
 		FA4E98942229834600DFE911 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E98922229834600DFE911 /* LoginVC.swift */; };
 		FA4E98952229834600DFE911 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4E98932229834600DFE911 /* LoginVC.xib */; };
 		FA4E9899222985E100DFE911 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E9897222985E100DFE911 /* WorkVC.swift */; };
@@ -51,6 +52,7 @@
 		FA905CAD222A17B9002A3FE9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA905CAC222A17B9002A3FE9 /* CoreDataManager.swift */; };
 		FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */; };
 		FA9B68292226D05500D9387C /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B68282226D05500D9387C /* UINavigationBar+Extension.swift */; };
+		FAF5CF0F222BF29400E2CE34 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5CF0E222BF29400E2CE34 /* UIAlertController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,7 @@
 		FA43CDFB222A445E00542E94 /* RetryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryHandler.swift; sourceTree = "<group>"; };
 		FA43CDFC222A445E00542E94 /* AutoLayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutHelper.swift; sourceTree = "<group>"; };
 		FA43CE01222A4F7C00542E94 /* CreateDiaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDiaryPresenter.swift; sourceTree = "<group>"; };
+		FA43CE03222ACEB900542E94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA4E98922229834600DFE911 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		FA4E98932229834600DFE911 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		FA4E9897222985E100DFE911 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		FA905CAC222A17B9002A3FE9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extension.swift"; sourceTree = "<group>"; };
 		FA9B68282226D05500D9387C /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
+		FAF5CF0E222BF29400E2CE34 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		FC91E1A3C4C94C8B0A4CC5CC /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,17 +145,18 @@
 		006D939C21CCA4D100429237 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				FA43CE05222AEA8F00542E94 /* Networking */,
 				FA0B3DF322297A8D009CB984 /* Services */,
 				009EEE972229070600D8FB8B /* Constants */,
 				00CF66AA2227E4E500C8FC27 /* Resources */,
 				00F3F137222670380041D683 /* Libraries */,
-				00CF66A22227DA0B00C8FC27 /* MockData */,
 				00CF6695222790FE00C8FC27 /* Models */,
 				00E3B28C21D07E6B00563BD2 /* ViewControllers */,
 				006D939D21CCA4D100429237 /* AppDelegate.swift */,
 				006D93A421CCA4D300429237 /* Assets.xcassets */,
 				006D93A621CCA4D300429237 /* LaunchScreen.storyboard */,
 				006D93A921CCA4D300429237 /* Info.plist */,
+				FA43CE03222ACEB900542E94 /* GoogleService-Info.plist */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -180,14 +185,6 @@
 				00CF66972227912B00C8FC27 /* Diary.swift */,
 			);
 			path = Diary;
-			sourceTree = "<group>";
-		};
-		00CF66A22227DA0B00C8FC27 /* MockData */ = {
-			isa = PBXGroup;
-			children = (
-				00CF66A32227DA2C00C8FC27 /* DiaryService.swift */,
-			);
-			path = MockData;
 			sourceTree = "<group>";
 		};
 		00CF66A72227DF8300C8FC27 /* Utils */ = {
@@ -242,6 +239,7 @@
 				FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */,
 				FA9B68282226D05500D9387C /* UINavigationBar+Extension.swift */,
 				FA0B3DF822297B5D009CB984 /* UIViewController+Ex.swift */,
+				FAF5CF0E222BF29400E2CE34 /* UIAlertController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +335,14 @@
 				FA43CDF4222A43AA00542E94 /* DateTimePicker.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		FA43CE05222AEA8F00542E94 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				00CF66A32227DA2C00C8FC27 /* DiaryService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		FA4E98912229833100DFE911 /* Login */ = {
@@ -436,6 +442,7 @@
 				FA43CDF8222A43AA00542E94 /* DateTimePicker.xib in Resources */,
 				00CF66AE2227E6C500C8FC27 /* Localizable.strings in Resources */,
 				006D93A521CCA4D300429237 /* Assets.xcassets in Resources */,
+				FA43CE04222ACEB900542E94 /* GoogleService-Info.plist in Resources */,
 				00F3F15822269C180041D683 /* DiaryCell.xib in Resources */,
 				FA4E989A222985E100DFE911 /* WorkVC.xib in Resources */,
 			);
@@ -469,13 +476,29 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Test/Pods-Test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -519,6 +542,7 @@
 				00F3F15722269C180041D683 /* DiaryCell.swift in Sources */,
 				FA0B3DF722297ADA009CB984 /* VCService.swift in Sources */,
 				00F3F13622266FE00041D683 /* UIView+Extension.swift in Sources */,
+				FAF5CF0F222BF29400E2CE34 /* UIAlertController+Extension.swift in Sources */,
 				00CF66A42227DA2C00C8FC27 /* DiaryService.swift in Sources */,
 				FA43CDE9222A299E00542E94 /* CreateDiaryVC.swift in Sources */,
 				006D939E21CCA4D100429237 /* AppDelegate.swift in Sources */,
@@ -681,7 +705,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DHCN.Test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naka.diary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -700,7 +724,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = DHCN.Test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.naka.diary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

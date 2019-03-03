@@ -63,7 +63,7 @@ class CreateDiaryVC: UIViewController {
         let title = txtTitle.text
         let content = tvContent.text
         let coverUrl = "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale"
-        let diary = Diary(title: title ?? "", content: content ?? "", coverUrl: coverUrl, mood: mood, dateStr: date.stringBy(format: DateFormat.dateTimeWithDash))
+        let diary = Diary(title: title ?? "", content: content ?? "", coverUrl: coverUrl, mood: mood, publishedAt: date)
         
         createDiaryPresenter.addDiaryToServer(diary: diary) { (diaryDB, error) in
             if let error = error {

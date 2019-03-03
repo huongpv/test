@@ -12,4 +12,8 @@ target 'Test' do
   
   # Used for show progress view
   pod 'SVProgressHUD'
+  
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 end
