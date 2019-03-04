@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import CoreData
 
 class DiaryService {
     private var firestore: Firestore { return Firestore.firestore() }
@@ -35,28 +36,45 @@ class DiaryService {
         }
     }
     
-    func addDiaryToServer(uid: String, diary: Diary, callBack: @escaping (Error?) -> Void) {
+    func addDiaryToServer(uid: String, diary: DiaryDB, callBack: @escaping (_ documentId: String?, _ error: Error?) -> Void) {
         let usersName = "users"
         let diariesName = "diaries"
+        var ref: DocumentReference? = nil
         let collectionRef = firestore.collection("\(usersName)/\(uid)/\(diariesName)")
         let data: [String : Any] = ["title": diary.title ?? "",
                                     "content": diary.content ?? "",
                                     "coverUrl": diary.coverUrl ?? "",
                                     "mood": diary.mood ?? "",
                                     "publishedAt": diary.publishedAt ?? Date()]
-        collectionRef.addDocument(data: data) { err in
+        ref = collectionRef.addDocument(data: data) { err in
             if let err = err {
-                callBack(err)
+                callBack(nil, err)
             } else {
-                callBack(nil)
+                callBack(ref?.documentID, nil)
             }
         }
     }
     
-    func updateDiaryToServer(diaryDB: DiaryDB, callBack: @escaping (Error?) -> Void) {
-        let delayTime = DispatchTime.now() + 1.0
-        DispatchQueue.main.asyncAfter(deadline: delayTime) {
-            callBack(nil)
+    func updateDiaryToServer(uid: String, diaryDB: DiaryDB, callBack: @escaping (Error?) -> Void) {
+        let usersName = "users"
+        let diariesName = "diaries"
+        guard let id = diaryDB.id else { return }
+        let documentRef = firestore.document("\(usersName)/\(uid)/\(diariesName)/\(id)")
+        
+        let data: [String : Any] = ["title": diaryDB.title ?? "",
+                                    "content": diaryDB.content ?? "",
+                                    "coverUrl": diaryDB.coverUrl ?? "",
+                                    "mood": diaryDB.mood ?? "",
+                                    "publishedAt": diaryDB.publishedAt ?? Date()]
+        
+        documentRef.updateData(data) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+                callBack(err)
+            } else {
+                print("Document successfully updated")
+                callBack(nil)
+            }
         }
     }
     
@@ -71,7 +89,7 @@ class DiaryService {
         }
     }
     
-    func getDiariesFromServer(uid: String, callBack: @escaping (_ diarys: [Diary]?, _ error: Error?) -> Void) {
+    func getDiariesFromServer(uid: String, callBack: @escaping (_ diaries: [DiaryDB]?, _ error: Error?) -> Void) {
         let usersName = "users"
         let diariesName = "diaries"
         
@@ -82,10 +100,17 @@ class DiaryService {
                 print("Error getting documents: \(err)")
                 callBack(nil, err)
             } else if let documents = querySnapshot?.documents {
-                var diaries = [Diary]()
+                var diaries = [DiaryDB]()
+                let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
                 documents.forEach({ (document) in
-                    let json = document.data() as [String : Any]
-                    let diary = Diary(json: json)
+                    let diary = DiaryDB(context: privateContext)
+                    let data = document.data()
+                    diary.title = data["title"] as? String ?? ""
+                    diary.content = data["content"] as? String ?? ""
+                    diary.coverUrl = data["coverUrl"] as? String ?? ""
+                    diary.mood = data["mood"] as? String ?? ""
+                    diary.publishedAt = data["publishedAt"] as? Date ?? Date()
+
                     diaries.append(diary)
                 })
                 callBack(diaries, nil)

@@ -33,7 +33,7 @@ class DiaryPresenter {
     
     func getDiarys() {
         diaryViewProtocol?.startLoading()
-        let diarys = CoreDataManager.shared.fetchDiarys()
+        let diarys = CoreDataManager.shared.getDataFromDB(type: DiaryDB.self)
         diaryViewProtocol?.setDiarys(diarys)
         diaryViewProtocol?.finishLoading()
     }

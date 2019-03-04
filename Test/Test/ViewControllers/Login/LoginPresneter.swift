@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol LoginProtocol: class {
     func startLoading()
@@ -48,7 +49,7 @@ class LoginPresenter {
             if let _ = error {
                 print("getDiariesFromServer Fail")
             } else if let diaries = diaries, error == nil {
-                CoreDataManager.shared.saveDiaries(diaries: diaries)
+                CoreDataManager.shared.addData(objects: diaries)
             }
         }
     }
