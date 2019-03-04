@@ -10,6 +10,7 @@ import CoreData
 
 struct CoreDataManager {
     static let shared = CoreDataManager()
+    let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     
     let persistenContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Model")
@@ -22,20 +23,13 @@ struct CoreDataManager {
     }()
     
     func addData<T: NSManagedObject>(objects: [T]) {
-//        let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-//        privateContext.parent = CoreDataManager.shared.persistenContainer.viewContext
-//
-//        do {
-//            try privateContext.save()
-//            try privateContext.parent?.save()
-//        } catch let err {
-//            print("\(err.localizedDescription)")
-//        }
-        
+        privateContext.parent = CoreDataManager.shared.persistenContainer.viewContext
+
         do {
-            try persistenContainer.viewContext.save()
-        } catch let saveErr {
-            print("Failed to save company: ", saveErr)
+            try privateContext.save()
+            try privateContext.parent?.save()
+        } catch let err {
+            print("\(err.localizedDescription)")
         }
     }
     

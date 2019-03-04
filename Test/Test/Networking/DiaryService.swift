@@ -101,9 +101,8 @@ class DiaryService {
                 callBack(nil, err)
             } else if let documents = querySnapshot?.documents {
                 var diaries = [DiaryDB]()
-                let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
                 documents.forEach({ (document) in
-                    let diary = DiaryDB(context: privateContext)
+                    let diary = DiaryDB(context: CoreDataManager.shared.privateContext)
                     let data = document.data()
                     diary.title = data["title"] as? String ?? ""
                     diary.content = data["content"] as? String ?? ""
