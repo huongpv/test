@@ -52,16 +52,16 @@ class DiaryPresenter {
                 print("getDiariesFromServer Fail")
             } else if let diariesJSON = diaries, error == nil {
                 // save diaries to database
-                self.saveDiariesToDB(objects: diariesJSON)
+                let diaries = self.saveDiariesToDB(objects: diariesJSON)
                 // set isSyncData
                 SharedData.isSyncData = true
                 // get diarys
-                self.getDiarys()
+                self.diaryViewProtocol?.setDiarys(diaries)
             }
         }
     }
     
-    private func saveDiariesToDB(objects: [Diary]) {
+    private func saveDiariesToDB(objects: [Diary]) -> [DiaryDB] {
         var diaries = [DiaryDB]()
         for item in objects {
             let diary = DiaryDB(context: CoreDataManager.shared.privateContext)
@@ -74,5 +74,7 @@ class DiaryPresenter {
         }
         
         CoreDataManager.shared.add(objects: diaries)
+        
+        return diaries
     }
 }

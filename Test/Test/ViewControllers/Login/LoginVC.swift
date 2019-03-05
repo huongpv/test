@@ -28,7 +28,7 @@ class LoginVC: UIViewController {
         let email = "huongpv37@gmail.com"// txtEmail.text ?? ""
         let password = "Vanhuong90"// txtPassword.text ?? ""
         
-        loginPresenter.login(email: email, password: password) { (uid, error) in
+        loginPresenter.login(email: email, password: password) { (error) in
             if let error = error {
                 UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Lỗi sai tài khoản hoặc mật khẩu \(error)", cancelButtonTitle: "Ok", handler: nil)
             } else {
