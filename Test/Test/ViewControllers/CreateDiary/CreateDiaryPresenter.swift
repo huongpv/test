@@ -8,9 +8,8 @@
 
 import Foundation
 
-protocol CreateDiaryProtocol: class {
-    func startLoading()
-    func finishLoading()
+protocol CreateDiaryProtocol: BaseProtocol {
+
 }
 
 class CreateDiaryPresenter {

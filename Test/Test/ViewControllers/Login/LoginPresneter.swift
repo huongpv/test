@@ -7,11 +7,9 @@
 //
 
 import Foundation
-import CoreData
 
-protocol LoginProtocol: class {
-    func startLoading()
-    func finishLoading()
+protocol LoginProtocol: BaseProtocol {
+
 }
 
 class LoginPresenter {

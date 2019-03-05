@@ -9,7 +9,6 @@
 import Foundation
 import Firebase
 import FirebaseAuth
-import CoreData
 
 class DiaryService {
     private var firestore: Firestore { return Firestore.firestore() }
@@ -110,5 +109,17 @@ class DiaryService {
 
             }
         }
+    }
+    
+    func logout(calback: @escaping (_ error: Error?) -> Void) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            calback(nil)
+        } catch let signOutError {
+            print ("Error signing out: %@", signOutError)
+            calback(signOutError)
+        }
+        
     }
 }

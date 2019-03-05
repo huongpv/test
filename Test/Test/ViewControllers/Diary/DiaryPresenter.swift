@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol DiaryProtocol: class {
-    func startLoading()
-    func finishLoading()
+protocol DiaryProtocol: BaseProtocol {
     func setDiarys(_ diarys: [DiaryDB])
 }
 
@@ -50,7 +48,8 @@ class DiaryPresenter {
             self.diaryViewProtocol?.finishLoading()
             if let _ = error {
                 print("getDiariesFromServer Fail")
-            } else if let diariesJSON = diaries, error == nil {
+            } else {
+                guard let diariesJSON = diaries else { return }
                 // save diaries to database
                 let diaries = self.saveDiariesToDB(objects: diariesJSON)
                 // set isSyncData

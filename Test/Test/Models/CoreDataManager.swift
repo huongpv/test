@@ -66,4 +66,15 @@ struct CoreDataManager {
         }
     }
     
+    func delete<T: NSManagedObject>(type: T.Type) {
+        let context = CoreDataManager.shared.persistenContainer.viewContext
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: T.fetchRequest())
+        
+        do {
+            try context.execute(batchDeleteRequest)
+        } catch let delErr {
+            print("Error: \(delErr.localizedDescription)")
+        }
+    }
+    
 }

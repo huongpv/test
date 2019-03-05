@@ -54,6 +54,9 @@
 		FA905CAD222A17B9002A3FE9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA905CAC222A17B9002A3FE9 /* CoreDataManager.swift */; };
 		FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */; };
 		FA9B68292226D05500D9387C /* UINavigationBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B68282226D05500D9387C /* UINavigationBar+Extension.swift */; };
+		FAC85AFA222EC5C700A16665 /* MyPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC85AF9222EC5C700A16665 /* MyPagePresenter.swift */; };
+		FAC85AFC222ECA6B00A16665 /* BaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC85AFB222ECA6B00A16665 /* BaseProtocol.swift */; };
+		FAC85AFE222ECB2D00A16665 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC85AFD222ECB2D00A16665 /* BaseVC.swift */; };
 		FAF5CF0F222BF29400E2CE34 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5CF0E222BF29400E2CE34 /* UIAlertController+Extension.swift */; };
 		FAF5CF12222C34F800E2CE34 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5CF11222C34F800E2CE34 /* SharedData.swift */; };
 		FAF5CF14222C379600E2CE34 /* LoginPresneter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5CF13222C379600E2CE34 /* LoginPresneter.swift */; };
@@ -114,6 +117,9 @@
 		FA905CAC222A17B9002A3FE9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extension.swift"; sourceTree = "<group>"; };
 		FA9B68282226D05500D9387C /* UINavigationBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Extension.swift"; sourceTree = "<group>"; };
+		FAC85AF9222EC5C700A16665 /* MyPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePresenter.swift; sourceTree = "<group>"; };
+		FAC85AFB222ECA6B00A16665 /* BaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProtocol.swift; sourceTree = "<group>"; };
+		FAC85AFD222ECB2D00A16665 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		FAF5CF0E222BF29400E2CE34 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		FAF5CF11222C34F800E2CE34 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		FAF5CF13222C379600E2CE34 /* LoginPresneter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresneter.swift; sourceTree = "<group>"; };
@@ -226,12 +232,14 @@
 		00E3B28C21D07E6B00563BD2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA0B3DF022297A4F009CB984 /* TabbarVC.swift */,
+				FAC85AFB222ECA6B00A16665 /* BaseProtocol.swift */,
+				FAC85AFD222ECB2D00A16665 /* BaseVC.swift */,
 				FA43CDE1222A216800542E94 /* CreateDiary */,
 				FA4E989B2229861B00DFE911 /* MyPage */,
 				FA4E9896222985CE00DFE911 /* Work */,
 				FA4E98912229833100DFE911 /* Login */,
 				FA0B3DF222297A59009CB984 /* Diary */,
-				FA0B3DF022297A4F009CB984 /* TabbarVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 		FA4E989B2229861B00DFE911 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				FAC85AF9222EC5C700A16665 /* MyPagePresenter.swift */,
 				FA4E989C2229863200DFE911 /* MyPageVC.swift */,
 				FA4E989D2229863200DFE911 /* MyPageVC.xib */,
 			);
@@ -538,6 +547,7 @@
 				FA43CE02222A4F7C00542E94 /* CreateDiaryPresenter.swift in Sources */,
 				00CF66A92227DF9100C8FC27 /* IndicatorViewer.swift in Sources */,
 				FA43CDFE222A445E00542E94 /* RetryHandler.swift in Sources */,
+				FAC85AFA222EC5C700A16665 /* MyPagePresenter.swift in Sources */,
 				FA0B3DF922297B5D009CB984 /* UIViewController+Ex.swift in Sources */,
 				008FC689222E1D36006689FD /* Snapshot+Ex.swift in Sources */,
 				FA4E98942229834600DFE911 /* LoginVC.swift in Sources */,
@@ -551,6 +561,7 @@
 				FAF5CF14222C379600E2CE34 /* LoginPresneter.swift in Sources */,
 				009EEE992229072700D8FB8B /* DateFormat.swift in Sources */,
 				FA4E9899222985E100DFE911 /* WorkVC.swift in Sources */,
+				FAC85AFC222ECA6B00A16665 /* BaseProtocol.swift in Sources */,
 				FA4E989E2229863200DFE911 /* MyPageVC.swift in Sources */,
 				FA905CAB222A15EC002A3FE9 /* Model.xcdatamodeld in Sources */,
 				FA43CDF5222A43AA00542E94 /* PickerViewer.swift in Sources */,
@@ -560,6 +571,7 @@
 				FA43CDFA222A43AA00542E94 /* DateTimePicker.swift in Sources */,
 				FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */,
 				FA43CDFF222A445E00542E94 /* AutoLayoutHelper.swift in Sources */,
+				FAC85AFE222ECB2D00A16665 /* BaseVC.swift in Sources */,
 				FA43CDF6222A43AA00542E94 /* BasePicker.swift in Sources */,
 				00F3F13A222670590041D683 /* GradientLayer.swift in Sources */,
 				00F3F13C222670A70041D683 /* UIColor+Extension.swift in Sources */,

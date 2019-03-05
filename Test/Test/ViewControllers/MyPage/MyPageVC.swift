@@ -9,22 +9,39 @@
 import UIKit
 
 class MyPageVC: UIViewController {
-
+    
+    // MARK: -Outlets
+    @IBOutlet weak var lbName: UILabel!
+    
+    // MARK: -Private
+    private let myPagePresenter = MyPagePresenter(diaryService: DiaryService())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        myPagePresenter.attachViewController(self)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func btnLogout(_ sender: Any) {
+        myPagePresenter.logout { (error) in
+            if let error = error {
+                print("Logout: \(error.localizedDescription)")
+            } else {
+                let tabbarVC = LoginVC()
+                SystemBoots.instance.appDelegate?.changeRootViewControoler(viewController: tabbarVC)
+            }
+        }
     }
-    */
+    
+}
 
+extension MyPageVC: MyPageProtocol {
+    func startLoading() {
+        IndicatorViewer.show()
+    }
+    
+    func finishLoading() {
+        IndicatorViewer.hide()
+    }
+    
 }
