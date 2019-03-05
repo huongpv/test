@@ -30,4 +30,13 @@ class SharedData {
             UserDefaults.standard.set(value?.encryptAES, forKey: "NotificationToken")
         }
     }
+    
+    class var isSyncData: Bool? {
+        get {
+            return (UserDefaults.standard.value(forKey: "isSyncData") as? Bool)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "isSyncData")
+        }
+    }
 }

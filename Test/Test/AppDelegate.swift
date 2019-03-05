@@ -19,10 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        window = UIWindow()
-        let testVC = TabbarVC()
-        window?.rootViewController = testVC
-        window?.makeKeyAndVisible()
+        // set root viewcontroller
+        setRootViewControoler()
         
         return true
     }
@@ -48,7 +46,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    private func setRootViewControoler() {
+        var rootViewController = UIViewController()
+        if let _ = SharedData.accessToken {
+            rootViewController = TabbarVC()
+        } else {
+            let loginVC = LoginVC()
+            rootViewController = UINavigationController(rootViewController: loginVC)
+        }
+        
+        window = UIWindow()
+        changeRootViewControoler(viewController: rootViewController)
+    }
+    
+    func changeRootViewControoler(viewController: UIViewController) {
+        window?.rootViewController = viewController
+        window?.makeKeyAndVisible()
+    }
 }
 

@@ -36,9 +36,9 @@ class LoginPresenter {
             self.loginViewProtocol?.finishLoading()
             if let error = error {
                 calback(nil, error)
-            } else if let uid = uid {
+            } else {
+                // save uid to share data
                 SharedData.accessToken = uid
-                self.getDiariesFromServer(uid: uid)
                 calback(uid, nil)
             }
         }

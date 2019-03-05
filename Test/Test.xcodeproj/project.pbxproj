@@ -11,6 +11,7 @@
 		006D93A521CCA4D300429237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A421CCA4D300429237 /* Assets.xcassets */; };
 		006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A621CCA4D300429237 /* LaunchScreen.storyboard */; };
 		008FC689222E1D36006689FD /* Snapshot+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FC688222E1D36006689FD /* Snapshot+Ex.swift */; };
+		008FC68B222E7D8E006689FD /* SystemBoots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008FC68A222E7D8E006689FD /* SystemBoots.swift */; };
 		009EEE992229072700D8FB8B /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EEE982229072700D8FB8B /* DateFormat.swift */; };
 		00CF66982227912B00C8FC27 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66972227912B00C8FC27 /* Diary.swift */; };
 		00CF669A2227C53D00C8FC27 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66992227C53D00C8FC27 /* Date+Extension.swift */; };
@@ -65,6 +66,7 @@
 		006D93A721CCA4D300429237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		006D93A921CCA4D300429237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		008FC688222E1D36006689FD /* Snapshot+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Snapshot+Ex.swift"; sourceTree = "<group>"; };
+		008FC68A222E7D8E006689FD /* SystemBoots.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemBoots.swift; sourceTree = "<group>"; };
 		009EEE982229072700D8FB8B /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		00CF66972227912B00C8FC27 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		00CF66992227C53D00C8FC27 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		FA0B3DF322297A8D009CB984 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				008FC68A222E7D8E006689FD /* SystemBoots.swift */,
 				FA0B3DF622297ADA009CB984 /* VCService.swift */,
 			);
 			path = Services;
@@ -531,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008FC68B222E7D8E006689FD /* SystemBoots.swift in Sources */,
 				FA43CE02222A4F7C00542E94 /* CreateDiaryPresenter.swift in Sources */,
 				00CF66A92227DF9100C8FC27 /* IndicatorViewer.swift in Sources */,
 				FA43CDFE222A445E00542E94 /* RetryHandler.swift in Sources */,

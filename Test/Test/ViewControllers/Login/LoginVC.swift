@@ -20,17 +20,20 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
 
         loginPresenter.attachViewController(self)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     @IBAction func btnLogin(_ sender: Any) {
-        let email = txtEmail.text ?? ""
-        let password = txtPassword.text ?? ""
+        let email = "huongpv37@gmail.com"// txtEmail.text ?? ""
+        let password = "Vanhuong90"// txtPassword.text ?? ""
         
         loginPresenter.login(email: email, password: password) { (uid, error) in
             if let error = error {
                 UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Lỗi sai tài khoản hoặc mật khẩu \(error)", cancelButtonTitle: "Ok", handler: nil)
-            } else if let uid = uid {
-                UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Đăng nhập thành công \(uid)", cancelButtonTitle: "Ok", handler: nil)
+            } else {
+                let tabbarVC = TabbarVC()
+                SystemBoots.instance.appDelegate?.changeRootViewControoler(viewController: tabbarVC)
             }
         }
     
