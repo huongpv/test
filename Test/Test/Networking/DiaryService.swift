@@ -15,13 +15,13 @@ class DiaryService {
     
     //the service delivers mocked data
     func getDiaryServices(callBack: @escaping (_ diarys: [Diary]?, _ error: Error?) -> Void) {
-        let diary = Diary(title: "Nhật ký của tôi",
+        let diary = Diary(id: "abc", title: "Nhật ký của tôi",
                                         content: "Kỷ nguyên mới của những chiếc smartphone màn hình gập đã chính thức bắt đầu, với việc Samsung ra mắt Galaxy Fold và Huawei ra mắt Mate X. Trong khi như thường lệ, Apple vẫn “bình chân như vại” và có vẻ như chưa có ý định ra mắt một chiếc iPhone màn hình gập.",
                                         coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale",
                                         mood: "Vui vẽ",
                                         publishedAt: "21/02/2018 13:13:59")
         
-        let diary2 = Diary(title: "Nhật ký của tôi Nhật ký của tôi Nhật ký của tôi",
+        let diary2 = Diary(id: "xyz", title: "Nhật ký của tôi Nhật ký của tôi Nhật ký của tôi",
                                          content: "Kỷ nguyên mới của những chiếc smartphone màn hình gập đã chính thức bắt đầu, với việc Samsung ra mắt Galaxy Fold và Huawei ra mắt Mate X.",
                                          coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale",
                                          mood: "Vui vẽ",
@@ -38,18 +38,19 @@ class DiaryService {
     func addDiaryToServer(uid: String, diary: DiaryDB, callBack: @escaping (_ documentId: String?, _ error: Error?) -> Void) {
         let usersName = "users"
         let diariesName = "diaries"
-        var ref: DocumentReference? = nil
-        let collectionRef = firestore.collection("\(usersName)/\(uid)/\(diariesName)")
-        let data: [String : Any] = ["title": diary.title ?? "",
+        let newDocRef = firestore.collection("\(usersName)/\(uid)/\(diariesName)").document()
+        let id = newDocRef.documentID
+        let data: [String : Any] = ["id": id,
+                                    "title": diary.title ?? "",
                                     "content": diary.content ?? "",
                                     "coverUrl": diary.coverUrl ?? "",
                                     "mood": diary.mood ?? "",
                                     "publishedAt": diary.publishedAt?.stringBy(format: DateFormat.dateTimeWithSlash) ?? ""]
-        ref = collectionRef.addDocument(data: data) { err in
+        newDocRef.setData(data) { (err) in
             if let err = err {
                 callBack(nil, err)
             } else {
-                callBack(ref?.documentID, nil)
+                callBack(id, nil)
             }
         }
     }

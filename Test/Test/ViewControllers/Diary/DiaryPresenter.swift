@@ -64,6 +64,7 @@ class DiaryPresenter {
         var diaries = [DiaryDB]()
         for item in objects {
             let diary = DiaryDB(context: CoreDataManager.shared.privateContext)
+            diary.id = item.id
             diary.title = item.title
             diary.content = item.content
             diary.coverUrl = item.coverUrl

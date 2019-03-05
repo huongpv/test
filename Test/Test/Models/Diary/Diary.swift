@@ -9,7 +9,7 @@
 import Foundation
 
 struct Diary: Decodable {
-    var id: Int?
+    var id: String?
     var title: String?
     var content: String?
     var coverUrl: String?
@@ -22,20 +22,13 @@ struct Diary: Decodable {
         return publishedAt?.dateBy(format: DateFormat.dateTimeWithSlash)?.formattedAsTimeAgo()
     }
     
-    init(title: String, content: String, coverUrl: String, mood: String, publishedAt: String) {
+    init(id: String, title: String, content: String, coverUrl: String, mood: String, publishedAt: String) {
+        self.id = id
         self.title = title
         self.content = content
         self.coverUrl = coverUrl
         self.mood = mood
         self.publishedAt = publishedAt
-    }
-    
-    init(json: [String: Any]) {
-        self.title = json["title"] as? String ?? ""
-        self.content = json["content"] as? String ?? ""
-        self.coverUrl = json["coverUrl"] as? String ?? ""
-        self.mood = json["mood"] as? String ?? ""
-        self.publishedAt = json["publishedAt"] as? String ?? ""
     }
 }
 
