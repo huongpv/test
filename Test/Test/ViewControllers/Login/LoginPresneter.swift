@@ -16,13 +16,13 @@ protocol LoginProtocol: class {
 
 class LoginPresenter {
     private let diaryService: DiaryService
-    weak private var loginViewProtocol: CreateDiaryProtocol?
+    weak private var loginViewProtocol: LoginProtocol?
     
     init(diaryService: DiaryService) {
         self.diaryService = diaryService
     }
     
-    func attachViewController(_ viewController: CreateDiaryProtocol){
+    func attachViewController(_ viewController: LoginProtocol){
         loginViewProtocol = viewController
     }
     
@@ -33,6 +33,7 @@ class LoginPresenter {
     func login(email: String, password: String, calback: @escaping (_ user: String?, _ error: Error?) -> Void) {
         loginViewProtocol?.startLoading()
         diaryService.login(email: email, password: password) { (uid, error) in
+            self.loginViewProtocol?.finishLoading()
             if let error = error {
                 calback(nil, error)
             } else if let uid = uid {
@@ -43,15 +44,32 @@ class LoginPresenter {
         }
     }
     
+    // when login success then save diaries to database
     private func getDiariesFromServer(uid: String) {
-        loginViewProtocol?.startLoading()
+        //loginViewProtocol?.startLoading()
         diaryService.getDiariesFromServer(uid: uid) { (diaries, error) in
+//            self.loginViewProtocol?.finishLoading()
             if let _ = error {
                 print("getDiariesFromServer Fail")
-            } else if let diaries = diaries, error == nil {
-                CoreDataManager.shared.addData(objects: diaries)
+            } else if let diariesJSON = diaries, error == nil {
+                self.saveDiariesToDB(objects: diariesJSON)
             }
         }
+    }
+    
+    private func saveDiariesToDB(objects: [Diary]) {
+        var diaries = [DiaryDB]()
+        for item in objects {
+            let diary = DiaryDB(context: CoreDataManager.shared.privateContext)
+            diary.title = item.title
+            diary.content = item.content
+            diary.coverUrl = item.coverUrl
+            diary.mood = item.mood
+            diary.publishedAt = item.publishedAt?.dateBy(format: DateFormat.dateTimeWithSlash)
+            diaries.append(diary)
+        }
+        
+        CoreDataManager.shared.add(objects: diaries)
     }
 
 }

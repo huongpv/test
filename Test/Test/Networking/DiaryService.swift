@@ -20,13 +20,13 @@ class DiaryService {
                                         content: "Kỷ nguyên mới của những chiếc smartphone màn hình gập đã chính thức bắt đầu, với việc Samsung ra mắt Galaxy Fold và Huawei ra mắt Mate X. Trong khi như thường lệ, Apple vẫn “bình chân như vại” và có vẻ như chưa có ý định ra mắt một chiếc iPhone màn hình gập.",
                                         coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale",
                                         mood: "Vui vẽ",
-                                        publishedAt: "21/02/2018 13:13:59".dateBy(format: DateFormat.dateTimeWithDash) ?? Date())
+                                        publishedAt: "21/02/2018 13:13:59")
         
         let diary2 = Diary(title: "Nhật ký của tôi Nhật ký của tôi Nhật ký của tôi",
                                          content: "Kỷ nguyên mới của những chiếc smartphone màn hình gập đã chính thức bắt đầu, với việc Samsung ra mắt Galaxy Fold và Huawei ra mắt Mate X.",
                                          coverUrl: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale",
                                          mood: "Vui vẽ",
-                                         publishedAt: "01/03/2019 13:13:59".dateBy(format: DateFormat.dateTimeWithDash) ?? Date())
+                                         publishedAt: "01/03/2019 13:13:59")
         
         let diarys = [diary, diary2, diary, diary, diary]
         
@@ -45,7 +45,7 @@ class DiaryService {
                                     "content": diary.content ?? "",
                                     "coverUrl": diary.coverUrl ?? "",
                                     "mood": diary.mood ?? "",
-                                    "publishedAt": diary.publishedAt ?? Date()]
+                                    "publishedAt": diary.publishedAt?.stringBy(format: DateFormat.dateTimeWithSlash) ?? ""]
         ref = collectionRef.addDocument(data: data) { err in
             if let err = err {
                 callBack(nil, err)
@@ -65,7 +65,7 @@ class DiaryService {
                                     "content": diaryDB.content ?? "",
                                     "coverUrl": diaryDB.coverUrl ?? "",
                                     "mood": diaryDB.mood ?? "",
-                                    "publishedAt": diaryDB.publishedAt ?? Date()]
+                                    "publishedAt": diaryDB.publishedAt?.stringBy(format: DateFormat.dateTimeWithSlash) ?? ""]
         
         documentRef.updateData(data) { err in
             if let err = err {
@@ -83,13 +83,13 @@ class DiaryService {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 calback(nil, error)
-            } else if let user = authResult?.user {
-                calback(user.uid, nil)
+            } else  {
+                calback(authResult?.user.uid, nil)
             }
         }
     }
     
-    func getDiariesFromServer(uid: String, callBack: @escaping (_ diaries: [DiaryDB]?, _ error: Error?) -> Void) {
+    func getDiariesFromServer(uid: String, callBack: @escaping (_ diaries: [Diary]?, _ error: Error?) -> Void) {
         let usersName = "users"
         let diariesName = "diaries"
         
@@ -99,20 +99,15 @@ class DiaryService {
             if let err = err {
                 print("Error getting documents: \(err)")
                 callBack(nil, err)
-            } else if let documents = querySnapshot?.documents {
-                var diaries = [DiaryDB]()
-                documents.forEach({ (document) in
-                    let diary = DiaryDB(context: CoreDataManager.shared.privateContext)
-                    let data = document.data()
-                    diary.title = data["title"] as? String ?? ""
-                    diary.content = data["content"] as? String ?? ""
-                    diary.coverUrl = data["coverUrl"] as? String ?? ""
-                    diary.mood = data["mood"] as? String ?? ""
-                    diary.publishedAt = data["publishedAt"] as? Date ?? Date()
+            } else {
+                do {
+                    guard let querySnapshot = querySnapshot else { return }
+                    let diaries: [Diary] = try querySnapshot.decoded()
+                    callBack(diaries, nil)
+                } catch let error {
+                    callBack(nil, error)
+                }
 
-                    diaries.append(diary)
-                })
-                callBack(diaries, nil)
             }
         }
     }

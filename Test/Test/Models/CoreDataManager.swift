@@ -22,7 +22,7 @@ struct CoreDataManager {
         return container
     }()
     
-    func addData<T: NSManagedObject>(objects: [T]) {
+    func add<T: NSManagedObject>(objects: [T]) {
         privateContext.parent = CoreDataManager.shared.persistenContainer.viewContext
 
         do {

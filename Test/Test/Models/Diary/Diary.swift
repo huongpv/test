@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct Diary {
+struct Diary: Decodable {
     var id: Int?
     var title: String?
     var content: String?
     var coverUrl: String?
     var mood: String?
     var url: String?
-    var publishedAt: Date?
+    var publishedAt: String?
     
     // Use for language device (Vietname)
     var timeAgo: String? {
-        return publishedAt?.formattedAsTimeAgo()
+        return publishedAt?.dateBy(format: DateFormat.dateTimeWithSlash)?.formattedAsTimeAgo()
     }
     
-    init(title: String, content: String, coverUrl: String, mood: String, publishedAt: Date) {
+    init(title: String, content: String, coverUrl: String, mood: String, publishedAt: String) {
         self.title = title
         self.content = content
         self.coverUrl = coverUrl
@@ -35,6 +35,7 @@ struct Diary {
         self.content = json["content"] as? String ?? ""
         self.coverUrl = json["coverUrl"] as? String ?? ""
         self.mood = json["mood"] as? String ?? ""
-        self.publishedAt = json["publishedAt"] as? Date ?? Date()
+        self.publishedAt = json["publishedAt"] as? String ?? ""
     }
 }
+

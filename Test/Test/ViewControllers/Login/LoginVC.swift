@@ -19,7 +19,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loginPresenter.attachViewController(self)
     }
     
     @IBAction func btnLogin(_ sender: Any) {
@@ -34,6 +34,17 @@ class LoginVC: UIViewController {
             }
         }
     
+    }
+    
+}
+
+extension LoginVC: LoginProtocol {
+    func startLoading() {
+        IndicatorViewer.show()
+    }
+    
+    func finishLoading() {
+        IndicatorViewer.hide()
     }
     
 }
