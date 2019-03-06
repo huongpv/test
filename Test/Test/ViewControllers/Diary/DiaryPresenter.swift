@@ -36,7 +36,9 @@ class DiaryPresenter {
     
     func getDiarys() {
         diaryViewProtocol?.startLoading()
-        let diarys = CoreDataManager.shared.getDataFromDB(type: DiaryDB.self)
+        let sort = NSSortDescriptor(key: "publishedAt", ascending: false)
+        let limit = 10
+        let diarys = CoreDataManager.shared.getDataBySort(type: DiaryDB.self, sort: sort, limit: limit)
         diaryViewProtocol?.setDiarys(diarys)
         diaryViewProtocol?.finishLoading()
     }
@@ -51,16 +53,16 @@ class DiaryPresenter {
             } else {
                 guard let diariesJSON = diaries else { return }
                 // save diaries to database
-                let diaries = self.saveDiariesToDB(objects: diariesJSON)
+                self.saveDiariesToDB(objects: diariesJSON)
                 // set isSyncData
                 SharedData.isSyncData = true
                 // get diarys
-                self.diaryViewProtocol?.setDiarys(diaries)
+                self.getDiarys()
             }
         }
     }
     
-    private func saveDiariesToDB(objects: [Diary]) -> [DiaryDB] {
+    private func saveDiariesToDB(objects: [Diary]) {
         var diaries = [DiaryDB]()
         for item in objects {
             let diary = DiaryDB(context: CoreDataManager.shared.privateContext)
@@ -74,7 +76,5 @@ class DiaryPresenter {
         }
         
         CoreDataManager.shared.add(objects: diaries)
-        
-        return diaries
     }
 }

@@ -48,6 +48,25 @@ struct CoreDataManager {
         }
     }
     
+    func getDataBySort<T: NSManagedObject>(type: T.Type, sort: NSSortDescriptor, limit: Int? = nil) -> [T] {
+        let context = persistenContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<T>(entityName: String(describing: T.self))
+        fetchRequest.sortDescriptors = [sort]
+        if let limit = limit {
+            fetchRequest.fetchLimit = limit
+        }
+        
+        do {
+            let objects = try context.fetch(fetchRequest)
+            
+            return objects
+        } catch let fetchErr {
+            print("Failed to fetch companies", fetchErr)
+            return []
+        }
+    }
+    
     func add<T: NSManagedObject>(object: T) {
         do {
             try persistenContainer.viewContext.save()
