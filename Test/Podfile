@@ -18,4 +18,6 @@ target 'Test' do
   pod 'Firebase/Auth'
   
   pod 'CryptoSwift'
+  
+  pod 'Firebase/Messaging'
 end
