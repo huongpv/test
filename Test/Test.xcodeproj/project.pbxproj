@@ -37,6 +37,13 @@
 		FA3A1675223527F400CD7738 /* FontCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A1673223527F400CD7738 /* FontCell.xib */; };
 		FA3A1678223537FA00CD7738 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3A1677223537F900CD7738 /* Pacifico.ttf */; };
 		FA3A167A2235380600CD7738 /* Sofia-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3A16792235380600CD7738 /* Sofia-Regular.otf */; };
+		FA3A16852235444800CD7738 /* MyPageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A167C2235444700CD7738 /* MyPageCell.xib */; };
+		FA3A16862235444800CD7738 /* MyPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A167D2235444700CD7738 /* MyPageCell.swift */; };
+		FA3A16872235444800CD7738 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A167F2235444700CD7738 /* HeaderView.xib */; };
+		FA3A16882235444800CD7738 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A16802235444700CD7738 /* HeaderView.swift */; };
+		FA3A16892235444800CD7738 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A16812235444700CD7738 /* MyPageVC.swift */; };
+		FA3A168A2235444800CD7738 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A16832235444800CD7738 /* FooterView.swift */; };
+		FA3A168B2235444800CD7738 /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A16842235444800CD7738 /* FooterView.xib */; };
 		FA43CDE9222A299E00542E94 /* CreateDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43CDE7222A299E00542E94 /* CreateDiaryVC.swift */; };
 		FA43CDEA222A299E00542E94 /* CreateDiaryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA43CDE8222A299E00542E94 /* CreateDiaryVC.xib */; };
 		FA43CDF5222A43AA00542E94 /* PickerViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43CDEE222A43AA00542E94 /* PickerViewer.swift */; };
@@ -53,8 +60,6 @@
 		FA4E98952229834600DFE911 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4E98932229834600DFE911 /* LoginVC.xib */; };
 		FA4E9899222985E100DFE911 /* WorkVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E9897222985E100DFE911 /* WorkVC.swift */; };
 		FA4E989A222985E100DFE911 /* WorkVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4E9898222985E100DFE911 /* WorkVC.xib */; };
-		FA4E989E2229863200DFE911 /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E989C2229863200DFE911 /* MyPageVC.swift */; };
-		FA4E989F2229863200DFE911 /* MyPageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4E989D2229863200DFE911 /* MyPageVC.xib */; };
 		FA905CAB222A15EC002A3FE9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA905CA9222A15EC002A3FE9 /* Model.xcdatamodeld */; };
 		FA905CAD222A17B9002A3FE9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA905CAC222A17B9002A3FE9 /* CoreDataManager.swift */; };
 		FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */; };
@@ -108,6 +113,13 @@
 		FA3A1673223527F400CD7738 /* FontCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCell.xib; sourceTree = "<group>"; };
 		FA3A1677223537F900CD7738 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		FA3A16792235380600CD7738 /* Sofia-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia-Regular.otf"; sourceTree = "<group>"; };
+		FA3A167C2235444700CD7738 /* MyPageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyPageCell.xib; sourceTree = "<group>"; };
+		FA3A167D2235444700CD7738 /* MyPageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageCell.swift; sourceTree = "<group>"; };
+		FA3A167F2235444700CD7738 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		FA3A16802235444700CD7738 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		FA3A16812235444700CD7738 /* MyPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
+		FA3A16832235444800CD7738 /* FooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		FA3A16842235444800CD7738 /* FooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		FA43CDE7222A299E00542E94 /* CreateDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDiaryVC.swift; sourceTree = "<group>"; };
 		FA43CDE8222A299E00542E94 /* CreateDiaryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateDiaryVC.xib; sourceTree = "<group>"; };
 		FA43CDEE222A43AA00542E94 /* PickerViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewer.swift; sourceTree = "<group>"; };
@@ -124,8 +136,6 @@
 		FA4E98932229834600DFE911 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		FA4E9897222985E100DFE911 /* WorkVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkVC.swift; sourceTree = "<group>"; };
 		FA4E9898222985E100DFE911 /* WorkVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkVC.xib; sourceTree = "<group>"; };
-		FA4E989C2229863200DFE911 /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
-		FA4E989D2229863200DFE911 /* MyPageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageVC.xib; sourceTree = "<group>"; };
 		FA905CAA222A15EC002A3FE9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		FA905CAC222A17B9002A3FE9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		FA9B68262226CF0300D9387C /* CAGradientLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extension.swift"; sourceTree = "<group>"; };
@@ -372,6 +382,33 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		FA3A167B2235444700CD7738 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A167C2235444700CD7738 /* MyPageCell.xib */,
+				FA3A167D2235444700CD7738 /* MyPageCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA3A167E2235444700CD7738 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A167F2235444700CD7738 /* HeaderView.xib */,
+				FA3A16802235444700CD7738 /* HeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		FA3A16822235444800CD7738 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A16832235444800CD7738 /* FooterView.swift */,
+				FA3A16842235444800CD7738 /* FooterView.xib */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
 		FA43CDE1222A216800542E94 /* CreateDiary */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,8 +471,10 @@
 			isa = PBXGroup;
 			children = (
 				FAC85AF9222EC5C700A16665 /* MyPagePresenter.swift */,
-				FA4E989C2229863200DFE911 /* MyPageVC.swift */,
-				FA4E989D2229863200DFE911 /* MyPageVC.xib */,
+				FA3A16812235444700CD7738 /* MyPageVC.swift */,
+				FA3A167B2235444700CD7738 /* Cell */,
+				FA3A16822235444800CD7738 /* FooterView */,
+				FA3A167E2235444700CD7738 /* HeaderView */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -526,16 +565,18 @@
 				FA43CDEA222A299E00542E94 /* CreateDiaryVC.xib in Resources */,
 				FA4E98952229834600DFE911 /* LoginVC.xib in Resources */,
 				FA43CDF9222A43AA00542E94 /* TextPicker.xib in Resources */,
-				FA4E989F2229863200DFE911 /* MyPageVC.xib in Resources */,
+				FA3A16872235444800CD7738 /* HeaderView.xib in Resources */,
 				006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */,
 				FA43CDF8222A43AA00542E94 /* DateTimePicker.xib in Resources */,
 				00CF66AE2227E6C500C8FC27 /* Localizable.strings in Resources */,
 				FA3A167A2235380600CD7738 /* Sofia-Regular.otf in Resources */,
+				FA3A16852235444800CD7738 /* MyPageCell.xib in Resources */,
 				FA3A1675223527F400CD7738 /* FontCell.xib in Resources */,
 				006D93A521CCA4D300429237 /* Assets.xcassets in Resources */,
 				FA3A1678223537FA00CD7738 /* Pacifico.ttf in Resources */,
 				FA43CE04222ACEB900542E94 /* GoogleService-Info.plist in Resources */,
 				00F3F15822269C180041D683 /* DiaryCell.xib in Resources */,
+				FA3A168B2235444800CD7738 /* FooterView.xib in Resources */,
 				FA4E989A222985E100DFE911 /* WorkVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +629,7 @@
 				008FC68B222E7D8E006689FD /* SystemBoots.swift in Sources */,
 				FA43CE02222A4F7C00542E94 /* CreateDiaryPresenter.swift in Sources */,
 				00CF66A92227DF9100C8FC27 /* IndicatorViewer.swift in Sources */,
+				FA3A16862235444800CD7738 /* MyPageCell.swift in Sources */,
 				FA43CDFE222A445E00542E94 /* RetryHandler.swift in Sources */,
 				FAC85AFA222EC5C700A16665 /* MyPagePresenter.swift in Sources */,
 				FA0B3DF922297B5D009CB984 /* UIViewController+Ex.swift in Sources */,
@@ -600,17 +642,18 @@
 				00CF669A2227C53D00C8FC27 /* Date+Extension.swift in Sources */,
 				00F3F14A222676260041D683 /* UITableView+Extension.swift in Sources */,
 				FA9B68292226D05500D9387C /* UINavigationBar+Extension.swift in Sources */,
+				FA3A16892235444800CD7738 /* MyPageVC.swift in Sources */,
 				FAF5CF14222C379600E2CE34 /* LoginPresneter.swift in Sources */,
 				FAAFDF692234AE5200060256 /* NotificationService.swift in Sources */,
 				009EEE992229072700D8FB8B /* DateFormat.swift in Sources */,
 				FA4E9899222985E100DFE911 /* WorkVC.swift in Sources */,
 				FAC85AFC222ECA6B00A16665 /* BaseProtocol.swift in Sources */,
-				FA4E989E2229863200DFE911 /* MyPageVC.swift in Sources */,
 				FA905CAB222A15EC002A3FE9 /* Model.xcdatamodeld in Sources */,
 				FA43CDF5222A43AA00542E94 /* PickerViewer.swift in Sources */,
 				00F0D0E52228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift in Sources */,
 				00CF66A62227DAEE00C8FC27 /* DiaryPresenter.swift in Sources */,
 				00CF669C2227C59D00C8FC27 /* String+Extension.swift in Sources */,
+				FA3A16882235444800CD7738 /* HeaderView.swift in Sources */,
 				FA43CDFA222A43AA00542E94 /* DateTimePicker.swift in Sources */,
 				FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */,
 				FA43CDFF222A445E00542E94 /* AutoLayoutHelper.swift in Sources */,
@@ -618,6 +661,7 @@
 				FA3A1674223527F400CD7738 /* FontCell.swift in Sources */,
 				FA43CDF6222A43AA00542E94 /* BasePicker.swift in Sources */,
 				00F3F13A222670590041D683 /* GradientLayer.swift in Sources */,
+				FA3A168A2235444800CD7738 /* FooterView.swift in Sources */,
 				00F3F13C222670A70041D683 /* UIColor+Extension.swift in Sources */,
 				FA905CAD222A17B9002A3FE9 /* CoreDataManager.swift in Sources */,
 				00CF66982227912B00C8FC27 /* Diary.swift in Sources */,
