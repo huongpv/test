@@ -28,9 +28,16 @@ class DiaryCell: UITableViewCell {
             imgProfile.sd_setImage(with: url, completed: nil)
         }
         lbTitle.text = diaryDB.title
+        lbTitle.font = UIFont(name: SharedData.fontName ?? "SFUIText", size: 17)
+        
         lbMood.text = diaryDB.mood
+        lbMood.font = UIFont(name: SharedData.fontName ?? "SFUIText", size: 12)
+        
         lbContent.text = diaryDB.content
+        lbContent.font = UIFont(name: SharedData.fontName ?? "SFUIText", size: 16)
+        
         lbTime.text = diaryDB.publishedAt?.formattedAsTimeAgo()
+        lbTime.font = UIFont(name: SharedData.fontName ?? "SFUIText", size: 12)
     }
     
 }

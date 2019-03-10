@@ -32,6 +32,11 @@
 		FA0B3DF122297A4F009CB984 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B3DF022297A4F009CB984 /* TabbarVC.swift */; };
 		FA0B3DF722297ADA009CB984 /* VCService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B3DF622297ADA009CB984 /* VCService.swift */; };
 		FA0B3DF922297B5D009CB984 /* UIViewController+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B3DF822297B5D009CB984 /* UIViewController+Ex.swift */; };
+		FA3A166F223527B700CD7738 /* FontVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A166D223527B700CD7738 /* FontVC.swift */; };
+		FA3A1674223527F400CD7738 /* FontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A1672223527F400CD7738 /* FontCell.swift */; };
+		FA3A1675223527F400CD7738 /* FontCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA3A1673223527F400CD7738 /* FontCell.xib */; };
+		FA3A1678223537FA00CD7738 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA3A1677223537F900CD7738 /* Pacifico.ttf */; };
+		FA3A167A2235380600CD7738 /* Sofia-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FA3A16792235380600CD7738 /* Sofia-Regular.otf */; };
 		FA43CDE9222A299E00542E94 /* CreateDiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43CDE7222A299E00542E94 /* CreateDiaryVC.swift */; };
 		FA43CDEA222A299E00542E94 /* CreateDiaryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA43CDE8222A299E00542E94 /* CreateDiaryVC.xib */; };
 		FA43CDF5222A43AA00542E94 /* PickerViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43CDEE222A43AA00542E94 /* PickerViewer.swift */; };
@@ -98,6 +103,11 @@
 		FA0B3DF022297A4F009CB984 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		FA0B3DF622297ADA009CB984 /* VCService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCService.swift; sourceTree = "<group>"; };
 		FA0B3DF822297B5D009CB984 /* UIViewController+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ex.swift"; sourceTree = "<group>"; };
+		FA3A166D223527B700CD7738 /* FontVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontVC.swift; sourceTree = "<group>"; };
+		FA3A1672223527F400CD7738 /* FontCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCell.swift; sourceTree = "<group>"; };
+		FA3A1673223527F400CD7738 /* FontCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCell.xib; sourceTree = "<group>"; };
+		FA3A1677223537F900CD7738 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		FA3A16792235380600CD7738 /* Sofia-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia-Regular.otf"; sourceTree = "<group>"; };
 		FA43CDE7222A299E00542E94 /* CreateDiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDiaryVC.swift; sourceTree = "<group>"; };
 		FA43CDE8222A299E00542E94 /* CreateDiaryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateDiaryVC.xib; sourceTree = "<group>"; };
 		FA43CDEE222A43AA00542E94 /* PickerViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewer.swift; sourceTree = "<group>"; };
@@ -223,6 +233,7 @@
 		00CF66AA2227E4E500C8FC27 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA3A16762235363B00CD7738 /* Fonts */,
 				00CF66AB2227E4FC00C8FC27 /* Strings */,
 			);
 			path = Resources;
@@ -239,6 +250,7 @@
 		00E3B28C21D07E6B00563BD2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA3A166C2235279400CD7738 /* Font */,
 				FA0B3DF022297A4F009CB984 /* TabbarVC.swift */,
 				FAC85AFB222ECA6B00A16665 /* BaseProtocol.swift */,
 				FAC85AFD222ECB2D00A16665 /* BaseVC.swift */,
@@ -331,6 +343,33 @@
 				FA0B3DF622297ADA009CB984 /* VCService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FA3A166C2235279400CD7738 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A1671223527D200CD7738 /* FontCell */,
+				FA3A166D223527B700CD7738 /* FontVC.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		FA3A1671223527D200CD7738 /* FontCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A1672223527F400CD7738 /* FontCell.swift */,
+				FA3A1673223527F400CD7738 /* FontCell.xib */,
+			);
+			path = FontCell;
+			sourceTree = "<group>";
+		};
+		FA3A16762235363B00CD7738 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A16792235380600CD7738 /* Sofia-Regular.otf */,
+				FA3A1677223537F900CD7738 /* Pacifico.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		FA43CDE1222A216800542E94 /* CreateDiary */ = {
@@ -491,7 +530,10 @@
 				006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */,
 				FA43CDF8222A43AA00542E94 /* DateTimePicker.xib in Resources */,
 				00CF66AE2227E6C500C8FC27 /* Localizable.strings in Resources */,
+				FA3A167A2235380600CD7738 /* Sofia-Regular.otf in Resources */,
+				FA3A1675223527F400CD7738 /* FontCell.xib in Resources */,
 				006D93A521CCA4D300429237 /* Assets.xcassets in Resources */,
+				FA3A1678223537FA00CD7738 /* Pacifico.ttf in Resources */,
 				FA43CE04222ACEB900542E94 /* GoogleService-Info.plist in Resources */,
 				00F3F15822269C180041D683 /* DiaryCell.xib in Resources */,
 				FA4E989A222985E100DFE911 /* WorkVC.xib in Resources */,
@@ -573,11 +615,13 @@
 				FA9B68272226CF0300D9387C /* CAGradientLayer+Extension.swift in Sources */,
 				FA43CDFF222A445E00542E94 /* AutoLayoutHelper.swift in Sources */,
 				FAC85AFE222ECB2D00A16665 /* BaseVC.swift in Sources */,
+				FA3A1674223527F400CD7738 /* FontCell.swift in Sources */,
 				FA43CDF6222A43AA00542E94 /* BasePicker.swift in Sources */,
 				00F3F13A222670590041D683 /* GradientLayer.swift in Sources */,
 				00F3F13C222670A70041D683 /* UIColor+Extension.swift in Sources */,
 				FA905CAD222A17B9002A3FE9 /* CoreDataManager.swift in Sources */,
 				00CF66982227912B00C8FC27 /* Diary.swift in Sources */,
+				FA3A166F223527B700CD7738 /* FontVC.swift in Sources */,
 				00F3F15722269C180041D683 /* DiaryCell.swift in Sources */,
 				FA0B3DF722297ADA009CB984 /* VCService.swift in Sources */,
 				00F3F13622266FE00041D683 /* UIView+Extension.swift in Sources */,

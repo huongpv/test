@@ -39,4 +39,13 @@ class SharedData {
             UserDefaults.standard.set(value, forKey: "isSyncData")
         }
     }
+    
+    class var fontName: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "fontName") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "fontName")
+        }
+    }
 }
