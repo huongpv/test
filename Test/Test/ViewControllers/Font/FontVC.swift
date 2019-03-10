@@ -34,6 +34,9 @@ class FontVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let fontName = fonts[indexPath.row]
         SharedData.fontName = fontName
+        
+        let tabbarVC = TabbarVC()
+        SystemBoots.instance.appDelegate?.changeRootViewControoler(viewController: tabbarVC)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

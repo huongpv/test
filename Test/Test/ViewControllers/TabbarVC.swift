@@ -48,7 +48,7 @@ class TabbarVC: UITabBarController {
         viewControllers = [diaryNav, workNav, myPageNav]
     }
     
-    func createNavigationItem(rootVC: UIViewController, itemTitle: String, itemTag: Int) -> UINavigationController {
+    private func createNavigationItem(rootVC: UIViewController, itemTitle: String, itemTag: Int) -> UINavigationController {
         let nav = UINavigationController(rootViewController: rootVC)
         nav.tabBarItem = UITabBarItem(title: itemTitle, image: nil, tag: itemTag)
         

@@ -10,6 +10,8 @@ import UIKit
 
 class MyPageVC: UITableViewController {
     
+    var arrStr = ["Thay đổi nền", "Thay đổi font chữ"]
+    
     // MARK: -Private
     private let myPagePresenter = MyPagePresenter(diaryService: DiaryService())
 
@@ -45,18 +47,14 @@ class MyPageVC: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return arrStr.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let str = arrStr[indexPath.row]
         let cell = tableView.reusableCell(type: MyPageCell.self)!
-        cell.lbTitle.textColor = .white
-        cell.lbTitle.text = "ABC"
+        cell.setupView(str: str)
         return cell
     }
     
@@ -66,7 +64,8 @@ class MyPageVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("ABC")
+        let fontVC = FontVC()
+        VCService.push(controller: fontVC)
     }
 }
 
