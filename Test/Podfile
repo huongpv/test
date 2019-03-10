@@ -7,6 +7,9 @@ target 'Test' do
 
   # Pods for Test
   
+  # Used for parsing JSOn in simple ways
+  pod 'SwiftyJSON', '~> 4.0'
+  
   # Used for loading and caching images
   pod 'SDWebImage', '~> 4.0'
   

@@ -180,37 +180,8 @@ extension NotificationService: UNUserNotificationCenterDelegate {
     }
     
     private func navigateNotiToApp(json: JSON) {
-        AppDelegate.shared?.shortcutListVC?.toggleShortcutView(isExpand: false, hideAfter: true, animated: true)
-        let smartMessage = json["msg_type"].string
-        let id = Int(json["content_id"].stringValue) ?? 0
-        if let typeStr = json["content_type"].string,
-            let notiType = NotiType(rawValue: typeStr),
-            let alert = json["aps"]["alert"].dictionary,
-            let message = alert["body"]?.string,
-            let title = alert["title"]?.string {
-            SharedData.notiId = id
-            SharedData.notiTitle = title
-            SharedData.notiMessage = message
-            SharedData.notiType = notiType
-            if let splashVC = UIViewController.topViewController() as? MainVC {
-                Utils.sleep(0.3) {
-                    splashVC.redEnvelopVC.animateRedEnvelopToBottom(stillShowTabBar: true) {[weak self] in
-                        self?.navigateScreens(smartMsg: smartMessage)
-                    }                    
-                }
-            } else {
-                self.navigateScreens(smartMsg: smartMessage)
-            }
-        }
-    }
-    
-    private func navigateScreens(smartMsg: String?) {
-        if let _ = smartMsg {
-            VCService.present(type: NotiPopupVC.self, prepare: { (vc) in
-                vc.modalPresentationStyle = .overFullScreen
-            }, animated: false)
-        } else {
-            Utils.toDetailFromNoti()
-        }
+        let remoteNoti = RemoteNoti(json: json)
+        
+        print(remoteNoti)
     }
 }

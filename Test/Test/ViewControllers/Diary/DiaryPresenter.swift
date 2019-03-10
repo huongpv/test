@@ -22,25 +22,33 @@ class DiaryPresenter {
     
     func attachViewController(_ viewController: DiaryProtocol){
         diaryViewProtocol = viewController
-        guard let uid = SharedData.accessToken else { return }
-        if let _ = SharedData.isSyncData {
-            getDiarys()
-        } else {
-            getDiariesFromServer(uid: uid)
-        }
+        // Register remote notifications
+        NotificationService.instance.registerPushNotification()
+        // Get diaries
+        getDiarys()
     }
     
     func detachView() {
         diaryViewProtocol = nil
     }
     
-    func getDiarys() {
+    private func getDiarys() {
+        guard let uid = SharedData.accessToken else { return }
+        if let _ = SharedData.isSyncData {
+            getDiariesFromDB()
+        } else {
+            getDiariesFromServer(uid: uid)
+        }
+    }
+    
+    private func getDiariesFromDB() {
         diaryViewProtocol?.startLoading()
         let sort = NSSortDescriptor(key: "publishedAt", ascending: false)
         let limit = 10
         let diarys = CoreDataManager.shared.getDataBySort(type: DiaryDB.self, sort: sort, limit: limit)
         diaryViewProtocol?.setDiarys(diarys)
         diaryViewProtocol?.finishLoading()
+
     }
     
     // when login success then save diaries to database
