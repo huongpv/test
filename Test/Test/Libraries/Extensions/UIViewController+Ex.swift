@@ -44,8 +44,8 @@ extension UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func setViewBackgroundColor(string: String = "wallpaper") {
-        let backgroundImage = UIImage(named: string)
+    func setViewBackgroundColor() {
+        let backgroundImage = UIImage(named: SharedData.backgroundImage ?? "wallpaper")
         view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
     }
 }

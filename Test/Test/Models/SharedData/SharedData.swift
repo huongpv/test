@@ -48,4 +48,13 @@ class SharedData {
             UserDefaults.standard.set(value, forKey: "fontName")
         }
     }
+    
+    class var backgroundImage: String? {
+        get {
+            return (UserDefaults.standard.value(forKey: "backgroundImage") as? String)
+        }
+        set(value) {
+            UserDefaults.standard.set(value, forKey: "backgroundImage")
+        }
+    }
 }

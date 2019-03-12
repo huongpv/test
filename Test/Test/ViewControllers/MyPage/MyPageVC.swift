@@ -25,8 +25,7 @@ class MyPageVC: UITableViewController {
         
         setupTableView()
         
-        let backgroundImage = UIImage(named: "wallpaper.pnp")
-        view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
+        setViewBackgroundColor()
     }
     
     private func setupTableView() {
@@ -64,8 +63,14 @@ class MyPageVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let fontVC = FontVC()
-        VCService.push(controller: fontVC)
+        if indexPath.row == 0 {
+            let backgroundVC = BackGroundImageVC(collectionViewLayout: UICollectionViewLayout())
+            VCService.push(controller: backgroundVC)
+        } else {
+            let fontVC = FontVC()
+            VCService.push(controller: fontVC)
+        }
+        
     }
 }
 
