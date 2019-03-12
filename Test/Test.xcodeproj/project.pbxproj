@@ -268,12 +268,9 @@
 		00E3B28C21D07E6B00563BD2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FABF40A32236962B000C2171 /* BackGroundImage */,
-				FA3A166C2235279400CD7738 /* Font */,
 				FA0B3DF022297A4F009CB984 /* TabbarVC.swift */,
 				FAC85AFB222ECA6B00A16665 /* BaseProtocol.swift */,
 				FAC85AFD222ECB2D00A16665 /* BaseVC.swift */,
-				FA43CDE1222A216800542E94 /* CreateDiary */,
 				FA4E989B2229861B00DFE911 /* MyPage */,
 				FA4E9896222985CE00DFE911 /* Work */,
 				FA4E98912229833100DFE911 /* Login */,
@@ -348,6 +345,7 @@
 		FA0B3DF222297A59009CB984 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				FA43CDE1222A216800542E94 /* CreateDiary */,
 				00CF66A52227DAEE00C8FC27 /* DiaryPresenter.swift */,
 				00E3B27E21D0755300563BD2 /* DiaryVC.swift */,
 				00F3F1442226756E0041D683 /* Cell */,
@@ -480,6 +478,8 @@
 		FA4E989B2229861B00DFE911 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				FABF40A32236962B000C2171 /* BackGroundImage */,
+				FA3A166C2235279400CD7738 /* Font */,
 				FAC85AF9222EC5C700A16665 /* MyPagePresenter.swift */,
 				FA3A16812235444700CD7738 /* MyPageVC.swift */,
 				FA3A167B2235444700CD7738 /* Cell */,
