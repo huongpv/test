@@ -220,11 +220,11 @@
 		00CF6695222790FE00C8FC27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA905CAC222A17B9002A3FE9 /* CoreDataManager.swift */,
 				FAA861812234C40800D8A3D4 /* RemoteNoti */,
 				FAF5CF10222C34F800E2CE34 /* SharedData */,
 				00CF66962227911000C8FC27 /* Diary */,
 				FA905CA9222A15EC002A3FE9 /* Model.xcdatamodeld */,
-				FA905CAC222A17B9002A3FE9 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

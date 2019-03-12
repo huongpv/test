@@ -14,6 +14,7 @@ class MyPageVC: UITableViewController {
     
     // MARK: -Private
     private let myPagePresenter = MyPagePresenter(diaryService: DiaryService())
+    private let user = CoreDataManager.shared.getDataFromDB(type: UserDB.self).last
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,10 @@ class MyPageVC: UITableViewController {
         // headerView
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 200)
         let headerView = HeaderView(frame: frame)
+        if let user = user {
+            headerView.updateView(user: user)
+        }
+        
         tableView.tableHeaderView = headerView
         
         // footerView

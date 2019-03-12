@@ -30,13 +30,19 @@ class LoginPresenter {
     
     func login(email: String, password: String, calback: @escaping (_ error: Error?) -> Void) {
         loginViewProtocol?.startLoading()
-        diaryService.login(email: email, password: password) { (uid, error) in
+        diaryService.login(email: email, password: password) { (user, error) in
             self.loginViewProtocol?.finishLoading()
             if let error = error {
                 calback(error)
             } else {
+                let userDB = UserDB(context: CoreDataManager.shared.persistenContainer.viewContext)
+                userDB.name = user?.displayName
+                userDB.email = user?.email
+                
+                CoreDataManager.shared.add(object: userDB)
+                
                 // save uid to share data
-                SharedData.accessToken = uid
+                SharedData.accessToken = user?.uid
                 calback(nil)
             }
         }

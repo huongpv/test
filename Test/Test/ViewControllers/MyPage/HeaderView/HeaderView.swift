@@ -12,6 +12,7 @@ class HeaderView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var imgProfiles: UIImageView!
+    @IBOutlet weak var lbUserName: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -61,4 +62,7 @@ class HeaderView: UIView {
         imgProfiles.layer.addSublayer(shapeLayer3)
     }
 
+    func updateView(user: UserDB) {
+        lbUserName.text = user.name ?? user.email
+    }
 }

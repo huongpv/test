@@ -37,6 +37,7 @@ class MyPagePresenter {
             } else {
                 // remove all data
                 CoreDataManager.shared.delete(type: DiaryDB.self)
+                CoreDataManager.shared.delete(type: UserDB.self)
                 
                 // reset isSyncData
                 SharedData.isSyncData = nil

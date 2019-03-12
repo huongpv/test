@@ -79,12 +79,12 @@ class DiaryService {
     }
     
     // Login
-    func login(email: String, password: String, calback: @escaping (_ user: String?, _ error: Error?) -> Void) {
+    func login(email: String, password: String, calback: @escaping (_ user: User?, _ error: Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 calback(nil, error)
             } else  {
-                calback(authResult?.user.uid, nil)
+                calback(authResult?.user, nil)
             }
         }
     }

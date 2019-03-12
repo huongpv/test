@@ -9,7 +9,18 @@
         <attribute name="timeAgo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="UserDB" representedClassName="UserDB" syncable="YES" codeGenerationType="class">
+        <attribute name="backgroundImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contentColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fontName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moodColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titleColor" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="DiaryDB" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="UserDB" positionX="-63" positionY="36" width="128" height="165"/>
     </elements>
 </model>
