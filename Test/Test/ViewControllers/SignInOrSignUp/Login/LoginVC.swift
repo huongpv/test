@@ -18,6 +18,9 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backgroundImage = UIImage(named: SharedData.backgroundImage ?? "login-mohini")
+        view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
 
         loginPresenter.attachViewController(self)
         
@@ -39,6 +42,15 @@ class LoginVC: UIViewController {
     
     }
     
+    @IBAction func btnToForgotPassword(_ sender: Any) {
+        let forgotPasswordVC = ForgotPasswordVC()
+        VCService.present(controller: forgotPasswordVC)
+    }
+    
+    @IBAction func btnToSignUp(_ sender: Any) {
+        let signUpVC = SignUpVC()
+        VCService.present(controller: signUpVC)
+    }
 }
 
 extension LoginVC: LoginProtocol {

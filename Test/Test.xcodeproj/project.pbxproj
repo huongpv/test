@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006661C52239006500E8F6F3 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006661C32239006500E8F6F3 /* SignUpVC.swift */; };
+		006661C62239006500E8F6F3 /* SignUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006661C42239006500E8F6F3 /* SignUpVC.xib */; };
+		006661CA2239073C00E8F6F3 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006661C82239073C00E8F6F3 /* ForgotPasswordVC.swift */; };
+		006661CB2239073C00E8F6F3 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006661C92239073C00E8F6F3 /* ForgotPasswordVC.xib */; };
 		006D939E21CCA4D100429237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D939D21CCA4D100429237 /* AppDelegate.swift */; };
 		006D93A521CCA4D300429237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A421CCA4D300429237 /* Assets.xcassets */; };
 		006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 006D93A621CCA4D300429237 /* LaunchScreen.storyboard */; };
@@ -20,6 +24,8 @@
 		00CF66A62227DAEE00C8FC27 /* DiaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A52227DAEE00C8FC27 /* DiaryPresenter.swift */; };
 		00CF66A92227DF9100C8FC27 /* IndicatorViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CF66A82227DF9100C8FC27 /* IndicatorViewer.swift */; };
 		00CF66AE2227E6C500C8FC27 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00CF66B02227E6C500C8FC27 /* Localizable.strings */; };
+		00D13FBF2238987D009B77B7 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D13FBD2238987D009B77B7 /* FirstVC.swift */; };
+		00D13FC02238987D009B77B7 /* FirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00D13FBE2238987D009B77B7 /* FirstVC.xib */; };
 		00E3B27F21D0755300563BD2 /* DiaryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3B27E21D0755300563BD2 /* DiaryVC.swift */; };
 		00F0D0E52228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F0D0E42228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift */; };
 		00F3F13622266FE00041D683 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F3F13522266FE00041D683 /* UIView+Extension.swift */; };
@@ -79,6 +85,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		006661C32239006500E8F6F3 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		006661C42239006500E8F6F3 /* SignUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpVC.xib; sourceTree = "<group>"; };
+		006661C82239073C00E8F6F3 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		006661C92239073C00E8F6F3 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		006D939A21CCA4D100429237 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		006D939D21CCA4D100429237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		006D93A421CCA4D300429237 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +109,8 @@
 		00CF66B22227E73A00C8FC27 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		00CF66B32227EA9800C8FC27 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		00CF66B42227EA9800C8FC27 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		00D13FBD2238987D009B77B7 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		00D13FBE2238987D009B77B7 /* FirstVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstVC.xib; sourceTree = "<group>"; };
 		00E3B27E21D0755300563BD2 /* DiaryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryVC.swift; sourceTree = "<group>"; };
 		00F0D0E42228D21C007D7A23 /* Date+FacebookTimeAgo+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FacebookTimeAgo+Ex.swift"; sourceTree = "<group>"; };
 		00F3F13522266FE00041D683 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -171,6 +183,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		006661C22239004900E8F6F3 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				006661C32239006500E8F6F3 /* SignUpVC.swift */,
+				006661C42239006500E8F6F3 /* SignUpVC.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		006661C72239071B00E8F6F3 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				006661C82239073C00E8F6F3 /* ForgotPasswordVC.swift */,
+				006661C92239073C00E8F6F3 /* ForgotPasswordVC.xib */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		006661CC22390B0400E8F6F3 /* SignInOrSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				FA4E98912229833100DFE911 /* Login */,
+				006661C72239071B00E8F6F3 /* ForgotPassword */,
+				006661C22239004900E8F6F3 /* SignUp */,
+			);
+			path = SignInOrSignUp;
+			sourceTree = "<group>";
+		};
 		006D939121CCA4D100429237 = {
 			isa = PBXGroup;
 			children = (
@@ -271,9 +311,9 @@
 				FA0B3DF022297A4F009CB984 /* TabbarVC.swift */,
 				FAC85AFB222ECA6B00A16665 /* BaseProtocol.swift */,
 				FAC85AFD222ECB2D00A16665 /* BaseVC.swift */,
+				006661CC22390B0400E8F6F3 /* SignInOrSignUp */,
 				FA4E989B2229861B00DFE911 /* MyPage */,
 				FA4E9896222985CE00DFE911 /* Work */,
-				FA4E98912229833100DFE911 /* Login */,
 				FA0B3DF222297A59009CB984 /* Diary */,
 			);
 			path = ViewControllers;
@@ -462,6 +502,8 @@
 				FAF5CF13222C379600E2CE34 /* LoginPresneter.swift */,
 				FA4E98922229834600DFE911 /* LoginVC.swift */,
 				FA4E98932229834600DFE911 /* LoginVC.xib */,
+				00D13FBD2238987D009B77B7 /* FirstVC.swift */,
+				00D13FBE2238987D009B77B7 /* FirstVC.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -592,6 +634,7 @@
 			files = (
 				FA43CDEA222A299E00542E94 /* CreateDiaryVC.xib in Resources */,
 				FA4E98952229834600DFE911 /* LoginVC.xib in Resources */,
+				006661CB2239073C00E8F6F3 /* ForgotPasswordVC.xib in Resources */,
 				FA43CDF9222A43AA00542E94 /* TextPicker.xib in Resources */,
 				FA3A16872235444800CD7738 /* HeaderView.xib in Resources */,
 				006D93A821CCA4D300429237 /* LaunchScreen.storyboard in Resources */,
@@ -600,6 +643,7 @@
 				FABF40AA223697AB000C2171 /* BackGroundImageCell.xib in Resources */,
 				FA3A167A2235380600CD7738 /* Sofia-Regular.otf in Resources */,
 				FA3A16852235444800CD7738 /* MyPageCell.xib in Resources */,
+				006661C62239006500E8F6F3 /* SignUpVC.xib in Resources */,
 				FA3A1675223527F400CD7738 /* FontCell.xib in Resources */,
 				006D93A521CCA4D300429237 /* Assets.xcassets in Resources */,
 				FA3A1678223537FA00CD7738 /* Pacifico.ttf in Resources */,
@@ -607,6 +651,7 @@
 				00F3F15822269C180041D683 /* DiaryCell.xib in Resources */,
 				FA3A168B2235444800CD7738 /* FooterView.xib in Resources */,
 				FA4E989A222985E100DFE911 /* WorkVC.xib in Resources */,
+				00D13FC02238987D009B77B7 /* FirstVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +705,7 @@
 				00CF66A92227DF9100C8FC27 /* IndicatorViewer.swift in Sources */,
 				FA3A16862235444800CD7738 /* MyPageCell.swift in Sources */,
 				FABF40CF2236A413000C2171 /* BackGroundImageVC.swift in Sources */,
+				006661C52239006500E8F6F3 /* SignUpVC.swift in Sources */,
 				FA43CDFE222A445E00542E94 /* RetryHandler.swift in Sources */,
 				FAC85AFA222EC5C700A16665 /* MyPagePresenter.swift in Sources */,
 				FA0B3DF922297B5D009CB984 /* UIViewController+Ex.swift in Sources */,
@@ -668,6 +714,7 @@
 				00E3B27F21D0755300563BD2 /* DiaryVC.swift in Sources */,
 				FA0B3DF122297A4F009CB984 /* TabbarVC.swift in Sources */,
 				FA43CDF7222A43AA00542E94 /* TextPicker.swift in Sources */,
+				006661CA2239073C00E8F6F3 /* ForgotPasswordVC.swift in Sources */,
 				FAF5CF12222C34F800E2CE34 /* SharedData.swift in Sources */,
 				00CF669A2227C53D00C8FC27 /* Date+Extension.swift in Sources */,
 				00F3F14A222676260041D683 /* UITableView+Extension.swift in Sources */,
@@ -704,6 +751,7 @@
 				00CF66A42227DA2C00C8FC27 /* DiaryService.swift in Sources */,
 				FA43CDE9222A299E00542E94 /* CreateDiaryVC.swift in Sources */,
 				FABF40A9223697AB000C2171 /* BackGroundImageCell.swift in Sources */,
+				00D13FBF2238987D009B77B7 /* FirstVC.swift in Sources */,
 				006D939E21CCA4D100429237 /* AppDelegate.swift in Sources */,
 				FAA861832234C41C00D8A3D4 /* RemoteNoti.swift in Sources */,
 			);

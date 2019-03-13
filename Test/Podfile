@@ -23,4 +23,6 @@ target 'Test' do
   pod 'CryptoSwift'
   
   pod 'Firebase/Messaging'
+  
+  #pod 'AnimatedTextInput', '~> 0.5.1'
 end
