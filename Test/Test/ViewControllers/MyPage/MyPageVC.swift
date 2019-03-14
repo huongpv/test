@@ -26,7 +26,7 @@ class MyPageVC: UITableViewController {
         
         setupTableView()
         
-        setViewBackgroundColor()
+        setViewBackgroundColorBy()
     }
     
     private func setupTableView() {

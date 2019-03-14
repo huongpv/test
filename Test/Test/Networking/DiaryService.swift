@@ -89,6 +89,17 @@ class DiaryService {
         }
     }
     
+    // SignUp
+    func signup(email: String, password: String, calback: @escaping (_ user: User?, _ error: Error?) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                calback(nil, error)
+            } else  {
+                calback(authResult?.user, nil)
+            }
+        }
+    }
+    
     func getDiariesFromServer(uid: String, callBack: @escaping (_ diaries: [Diary]?, _ error: Error?) -> Void) {
         let usersName = "users"
         let diariesName = "diaries"
@@ -122,5 +133,13 @@ class DiaryService {
             calback(signOutError)
         }
         
+    }
+    
+    func forgotPassword(email: String, calback: @escaping (_ error: Error?) -> Void) {
+        let firebaseAuth = Auth.auth()
+        firebaseAuth.languageCode = "vn"
+        firebaseAuth.sendPasswordReset(withEmail: email) { (error) in
+            calback(error)
+        }
     }
 }

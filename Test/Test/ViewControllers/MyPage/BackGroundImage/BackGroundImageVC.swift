@@ -15,7 +15,7 @@ class BackGroundImageVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViewBackgroundColor()
+        setViewBackgroundColorBy()
         
         collectionView.backgroundColor = .clear
         

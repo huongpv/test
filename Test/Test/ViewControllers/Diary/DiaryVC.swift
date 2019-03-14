@@ -21,7 +21,7 @@ class DiaryVC: UITableViewController {
         
         setupPlusButtonInNavBar(selector: #selector(handleAddDiary))
         
-        setViewBackgroundColor()
+        setViewBackgroundColorBy()
         
         diaryPresenter.attachViewController(self)
         

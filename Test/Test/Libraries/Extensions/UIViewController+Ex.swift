@@ -44,8 +44,18 @@ extension UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func setViewBackgroundColor() {
-        let backgroundImage = UIImage(named: SharedData.backgroundImage ?? "wallpaper")
+    func setViewBackgroundColorBy(imageNamed: String? = nil) {
+        let backgroundImage = UIImage(named: imageNamed ?? SharedData.backgroundImage ?? "wallpaper")
         view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

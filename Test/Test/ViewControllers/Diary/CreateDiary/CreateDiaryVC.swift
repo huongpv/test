@@ -49,7 +49,7 @@ class CreateDiaryVC: UIViewController {
         
         createDiaryPresenter.attachViewController(self)
         
-        setViewBackgroundColor()
+        setViewBackgroundColorBy()
         setupSaveButtonInNavBar(selector: #selector(handleSave))
     }
     

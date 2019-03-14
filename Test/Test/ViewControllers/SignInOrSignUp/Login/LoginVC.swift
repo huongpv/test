@@ -19,21 +19,29 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backgroundImage = UIImage(named: SharedData.backgroundImage ?? "login-mohini")
-        view.backgroundColor = UIColor(patternImage: backgroundImage ?? UIImage())
+        setViewBackgroundColorBy(imageNamed: "login-mohini")
 
         loginPresenter.attachViewController(self)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        hideKeyboardWhenTappedAround()
     }
     
     @IBAction func btnLogin(_ sender: Any) {
-        let email = "huongpv37@gmail.com"// txtEmail.text ?? ""
-        let password = "Vanhuong90"// txtPassword.text ?? ""
+        guard let email = txtEmail.text, Helper.isValidEmail(email: email) else {
+            UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: AlertKeys.emailFormat, cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
+            return
+        }
+        
+        guard let password = txtPassword.text, Helper.isPasswordValid(password: password) else {
+            UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: AlertKeys.passwordFormat, cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
+            return
+        }
         
         loginPresenter.login(email: email, password: password) { (error) in
-            if let error = error {
-                UIAlertController.showQuickSystemAlert(target: self, title: "Thông báo", message: "Lỗi sai tài khoản hoặc mật khẩu \(error)", cancelButtonTitle: "Ok", handler: nil)
+            if let _ = error {
+                UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: "Lỗi sai tài khoản hoặc mật khẩu", cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
             } else {
                 let tabbarVC = TabbarVC()
                 SystemBoots.instance.appDelegate?.changeRootViewControoler(viewController: tabbarVC)
