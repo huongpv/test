@@ -33,7 +33,7 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func btnSignUp(_ sender: Any) {
-//        let name = txtName.text
+        let name = txtName.text
         guard let email = txtEmail.text, Helper.isValidEmail(email: email) else {
             UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: AlertKeys.emailFormat, cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
             return
@@ -44,7 +44,7 @@ class SignUpVC: UIViewController {
             return
         }
 
-        signupPresenter.signup(email: email, password: password) { (error) in
+        signupPresenter.signup(displayName: name ?? "", email: email, password: password) { (error) in
             if let _ = error {
                 UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: "Đăng kí không thành công, vui lòng đăng kí lại", cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
             } else {

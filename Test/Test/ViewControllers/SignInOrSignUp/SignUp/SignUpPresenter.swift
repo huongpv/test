@@ -28,9 +28,9 @@ class SignUpPresenter {
         signUpViewProtocol = nil
     }
     
-    func signup(email: String, password: String, calback: @escaping (_ error: Error?) -> Void) {
+    func signup(displayName: String, email: String, password: String, calback: @escaping (_ error: Error?) -> Void) {
         signUpViewProtocol?.startLoading()
-        diaryService.signup(email: email, password: password) { (user, error) in
+        diaryService.signup(displayName: displayName, email: email, password: password) { (user, error) in
             self.signUpViewProtocol?.finishLoading()
             if let error = error {
                 calback(error)

@@ -90,12 +90,17 @@ class DiaryService {
     }
     
     // SignUp
-    func signup(email: String, password: String, calback: @escaping (_ user: User?, _ error: Error?) -> Void) {
+    func signup(displayName: String, email: String, password: String, calback: @escaping (_ user: User?, _ error: Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 calback(nil, error)
             } else  {
-                calback(authResult?.user, nil)
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = displayName
+                changeRequest?.commitChanges { (error) in
+                    calback(authResult?.user, nil)
+                }
+//                calback(authResult?.user, nil)
             }
         }
     }
