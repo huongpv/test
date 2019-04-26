@@ -18,7 +18,7 @@ class MyPageVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.setGradientBackgroundNav(startColor: .green, endColor: .blue, gradientDirection: .leftToRight)
+        navigationController?.navigationBar.setGradientBackgroundNav(startColor: #colorLiteral(red: 0.09803921569, green: 0.568627451, blue: 0.9215686275, alpha: 1), endColor: #colorLiteral(red: 0.1764705882, green: 0.631372549, blue: 0.9725490196, alpha: 1), gradientDirection: .leftToRight)
         
         navigationItem.title = "Cài đặt"
         
