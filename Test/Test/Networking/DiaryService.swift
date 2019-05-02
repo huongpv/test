@@ -147,4 +147,70 @@ class DiaryService {
             calback(error)
         }
     }
+    
+    func addWorkToServer(uid: String, work: WorkDB, callBack: @escaping (_ documentId: String?, _ error: Error?) -> Void) {
+        let usersName = "users"
+        let worksName = "works"
+        let newDocRef = firestore.collection("\(usersName)/\(uid)/\(worksName)").document()
+        let id = newDocRef.documentID
+        let data: [String : Any] = ["id": id,
+                                    "title": work.title ?? "",
+                                    "content": work.content ?? "",
+                                    "coverUrl": work.coverUrl ?? "",
+                                    "mood": work.mood ?? "",
+                                    "publishedAt": work.publishedAt?.stringBy(format: DateFormat.dateTimeWithSlash) ?? ""]
+        newDocRef.setData(data) { (err) in
+            if let err = err {
+                callBack(nil, err)
+            } else {
+                callBack(id, nil)
+            }
+        }
+    }
+    
+    func updateWorkToServer(uid: String, workDB: WorkDB, callBack: @escaping (Error?) -> Void) {
+        let usersName = "users"
+        let worksName = "works"
+        guard let id = workDB.id else { return }
+        let documentRef = firestore.document("\(usersName)/\(uid)/\(worksName)/\(id)")
+        
+        let data: [String : Any] = ["title": workDB.title ?? "",
+                                    "content": workDB.content ?? "",
+                                    "coverUrl": workDB.coverUrl ?? "",
+                                    "mood": workDB.mood ?? "",
+                                    "publishedAt": workDB.publishedAt?.stringBy(format: DateFormat.dateTimeWithSlash) ?? ""]
+        
+        documentRef.updateData(data) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+                callBack(err)
+            } else {
+                print("Document successfully updated")
+                callBack(nil)
+            }
+        }
+    }
+    
+    func getWorksFromServer(uid: String, callBack: @escaping (_ works: [Work]?, _ error: Error?) -> Void) {
+        let usersName = "users"
+        let worksName = "works"
+        
+        let collectionRef = firestore.collection("\(usersName)/\(uid)/\(worksName)")
+        
+        collectionRef.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                callBack(nil, err)
+            } else {
+                do {
+                    guard let querySnapshot = querySnapshot else { return }
+                    let works: [Work] = try querySnapshot.decoded()
+                    callBack(works, nil)
+                } catch let error {
+                    callBack(nil, error)
+                }
+                
+            }
+        }
+    }
 }
