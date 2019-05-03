@@ -31,7 +31,7 @@ extension UIViewController {
     }
     
     func setupSaveButtonInNavBar(selector: Selector) {
-        let rightBarItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: selector)
+        let rightBarItem = UIBarButtonItem(title: "Lưu", style: .plain, target: self, action: selector)
         navigationItem.rightBarButtonItem = rightBarItem
     }
     
