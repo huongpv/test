@@ -44,6 +44,10 @@ class ForgotPasswordVC: UIViewController {
         }
         
     }
+    
+    @IBAction func btnClose(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension ForgotPasswordVC: ForgotPasswordProtocol {
