@@ -7,8 +7,8 @@
 */
 
 // Diary
-"my_diary" = "My Diary";
-"my_work" = "My Work";
+"my_diary" = "Nhật kí của tôi";
+"my_work" = "Công việc của tôi";
 
 // MARK: - General
 "ok" = "OK";

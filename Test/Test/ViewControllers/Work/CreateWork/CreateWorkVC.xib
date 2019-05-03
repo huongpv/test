@@ -43,7 +43,7 @@
                                                         <constraint firstAttribute="height" constant="37" id="U6g-ua-lQw"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Viết tiêu đề nhật kí" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jbe-E6-d28">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Viết tiêu đề công việc" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jbe-E6-d28">
                                                     <rect key="frame" x="69" y="8" width="258" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -77,7 +77,7 @@
                                         <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mke-Tl-z1y">
                                             <rect key="frame" x="0.0" y="72" width="343" height="56"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pen" translatesAutoresizingMaskIntoConstraints="NO" id="66x-XV-8zS">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_happy" translatesAutoresizingMaskIntoConstraints="NO" id="66x-XV-8zS">
                                                     <rect key="frame" x="16" y="9.5" width="37" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="37" id="YV9-Qe-MNU"/>
@@ -129,7 +129,7 @@
                                                         <constraint firstAttribute="width" constant="37" id="RnM-42-U7r"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Viết nội dung nhật kí" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="au4-AL-CqE">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Viết nội dung công việc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="au4-AL-CqE">
                                                     <rect key="frame" x="78" y="8" width="249" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -163,7 +163,7 @@
                                         <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfH-oz-OOd">
                                             <rect key="frame" x="0.0" y="276" width="343" height="56"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pen" translatesAutoresizingMaskIntoConstraints="NO" id="qwn-5k-64Z">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time" translatesAutoresizingMaskIntoConstraints="NO" id="qwn-5k-64Z">
                                                     <rect key="frame" x="16" y="9.5" width="37" height="37"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="37" id="P2t-iC-qB7"/>
@@ -256,6 +256,8 @@
         </view>
     </objects>
     <resources>
+        <image name="icon_happy" width="64" height="64"/>
+        <image name="icon_time" width="64" height="64"/>
         <image name="pen" width="32" height="32"/>
     </resources>
 </document>
