@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateWorkVC" customModule="Test" customModuleProvider="target">
             <connections>
+                <outlet property="btnMood" destination="jlu-WJ-nXu" id="bda-6h-Gwq"/>
+                <outlet property="btnTime" destination="W8D-JP-c7T" id="Yx9-jQ-sHP"/>
                 <outlet property="constraintHeightContentView" destination="icx-eu-ZGq" id="S7I-5S-S68"/>
                 <outlet property="constraintHeightMoodTextView" destination="Qem-hN-JfS" id="YAL-zu-3JN"/>
                 <outlet property="tvContent" destination="au4-AL-CqE" id="yb1-8x-PR9"/>
@@ -129,7 +131,7 @@
                                                         <constraint firstAttribute="width" constant="37" id="RnM-42-U7r"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Viết nội dung công việc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="au4-AL-CqE">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="au4-AL-CqE">
                                                     <rect key="frame" x="78" y="8" width="249" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>

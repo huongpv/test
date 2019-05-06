@@ -24,9 +24,9 @@ class WorkCell: UITableViewCell {
     }
 
     func setupView(workDB: WorkDB) {
-        if let urlStr = workDB.coverUrl, let url = URL(string: urlStr) {
-            imgProfile.sd_setImage(with: url, completed: nil)
-        }
+//        if let urlStr = workDB.coverUrl, let url = URL(string: urlStr) {
+//            imgProfile.sd_setImage(with: url, completed: nil)
+//        }
         lbTitle.text = workDB.title
         lbTitle.font = UIFont(name: SharedData.fontName ?? "SFUIText", size: 17)
         

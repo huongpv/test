@@ -18,6 +18,8 @@ class CreateDiaryVC: UIViewController {
     // MARK: -Outlets
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var btnMood: UIButton!
+    @IBOutlet weak var btnTime: UIButton!
     
     // MARK: -Constraints
     @IBOutlet weak var constraintHeightContentView: NSLayoutConstraint!
@@ -35,7 +37,9 @@ class CreateDiaryVC: UIViewController {
             txtTitle.text = diaryDB.title
             tvContent.text = diaryDB.content
             date = diaryDB.publishedAt ?? Date()
+            self.btnTime.setTitle(self.date.stringBy(format: "dd/MM/YYYY"), for: .normal)
             mood = diaryDB.mood ?? ""
+            self.btnMood.setTitle(self.mood, for: .normal)
         }
     }
     
@@ -49,7 +53,7 @@ class CreateDiaryVC: UIViewController {
         
         createDiaryPresenter.attachViewController(self)
         
-        setViewBackgroundColorBy()
+        setViewBackgroundColorBy(imageNamed: "login-mohini")
         setupSaveButtonInNavBar(selector: #selector(handleSave))
     }
     
@@ -64,7 +68,7 @@ class CreateDiaryVC: UIViewController {
     private func addDiary() {
         let title = txtTitle.text
         let content = tvContent.text
-        let coverUrl = "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale"
+        let coverUrl = "icon_happy"
         
         createDiaryPresenter.addDiaryToServer(title: title ?? "", content: content ?? "", coverUrl: coverUrl, publishedAt: date, mood: mood) { (diaryDB, error) in
             if let error = error {
@@ -95,12 +99,16 @@ class CreateDiaryVC: UIViewController {
     }
     
     @IBAction func btnMood(_ sender: Any) {
-        mood = "Vui vẽ"
+        PickerViewer.showTextPicker(list: ["Hạnh phúc", "Vui vẽ", "Buồn bã", "Giận dữ"]) { (response) in
+            self.mood = response?.stringValue ?? self.mood
+            self.btnMood.setTitle(self.mood, for: .normal)
+        }
     }
     
     @IBAction func btnTime(_ sender: Any) {
         PickerViewer.showDateTimePicker(date: Date()) { (response) in
-            self.date = response?.date ?? Date()
+            self.date = response?.date ?? self.date
+            self.btnTime.setTitle(self.date.stringBy(format: "dd/MM/YYYY"), for: .normal)
         }
     }
     

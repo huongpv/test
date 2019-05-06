@@ -21,7 +21,7 @@ class WorkVC: UITableViewController {
         
         setupPlusButtonInNavBar(selector: #selector(handleAddDiary))
         
-        setViewBackgroundColorBy()
+        setViewBackgroundColorBy(imageNamed: "login-mohini")
         
         presenter.attachViewController(self)
         

@@ -10,7 +10,9 @@ import UIKit
 
 class MyPageVC: UITableViewController {
     
-    var arrStr = ["Thay đổi nền", "Thay đổi font chữ"]
+    var arrStr = [
+//                    "Thay đổi nền",
+                  "Thay đổi font chữ"]
     
     // MARK: -Private
     private let myPagePresenter = MyPagePresenter(diaryService: DiaryService())
@@ -26,7 +28,7 @@ class MyPageVC: UITableViewController {
         
         setupTableView()
         
-        setViewBackgroundColorBy()
+        setViewBackgroundColorBy(imageNamed: "login-mohini")
     }
     
     private func setupTableView() {
@@ -43,7 +45,7 @@ class MyPageVC: UITableViewController {
         tableView.tableHeaderView = headerView
         
         // footerView
-        let footerFrame = CGRect(x: 0, y: 20, width: view.frame.width, height: 37)
+        let footerFrame = CGRect(x: 0, y: 20, width: view.frame.width, height: 66)
         let footerView = FooterView(frame: footerFrame)
         footerView.myPagePresenter = myPagePresenter
         tableView.tableFooterView = footerView
@@ -64,17 +66,17 @@ class MyPageVC: UITableViewController {
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let backgroundVC = BackGroundImageVC(collectionViewLayout: UICollectionViewLayout())
-            VCService.push(controller: backgroundVC)
-        } else {
+//        if indexPath.row == 0 {
+//            let backgroundVC = BackGroundImageVC(collectionViewLayout: UICollectionViewLayout())
+//            VCService.push(controller: backgroundVC)
+//        } else {
             let fontVC = FontVC()
             VCService.push(controller: fontVC)
-        }
+//        }
         
     }
 }

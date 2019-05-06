@@ -21,7 +21,7 @@ class DiaryVC: UITableViewController {
         
         setupPlusButtonInNavBar(selector: #selector(handleAddDiary))
         
-        setViewBackgroundColorBy()
+        setViewBackgroundColorBy(imageNamed: "login-mohini")
         
         diaryPresenter.attachViewController(self)
         

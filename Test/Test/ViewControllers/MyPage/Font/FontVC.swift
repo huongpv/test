@@ -18,6 +18,8 @@ class FontVC: UITableViewController {
         tableView.registerNibCellFor(type: FontCell.self)
         
         fonts = ["Pacifico", "Sofia-Regular"]
+        
+        setViewBackgroundColorBy(imageNamed: "login-mohini")
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +42,6 @@ class FontVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 60
     }
 }

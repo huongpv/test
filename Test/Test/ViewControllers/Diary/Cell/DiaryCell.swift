@@ -24,9 +24,9 @@ class DiaryCell: UITableViewCell {
     }
 
     func setupView(diaryDB: DiaryDB) {
-        if let urlStr = diaryDB.coverUrl, let url = URL(string: urlStr) {
-            imgProfile.sd_setImage(with: url, completed: nil)
-        }
+//        if let urlStr = diaryDB.coverUrl, let url = URL(string: urlStr) {
+//            imgProfile.sd_setImage(with: url, completed: nil)
+//        }
         lbTitle.text = diaryDB.title
         lbTitle.font = UIFont(name: SharedData.fontName ?? "SFUIText", size: 17)
         

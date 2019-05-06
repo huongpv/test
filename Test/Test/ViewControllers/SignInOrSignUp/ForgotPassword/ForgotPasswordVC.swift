@@ -11,12 +11,16 @@ import UIKit
 class ForgotPasswordVC: UIViewController {
     
     @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var imgForget: UIImageView!
     // MARK: -Private
     private let forgotPasswordPresenter = ForgotPasswordPresenter(diaryService: DiaryService())
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imgForget.layer.cornerRadius = 5
+        imgForget.layer.masksToBounds = true
+        
         setViewBackgroundColorBy(imageNamed: "login-mohini")
         
         forgotPasswordPresenter.attachViewController(self)

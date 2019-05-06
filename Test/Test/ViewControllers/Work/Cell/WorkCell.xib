@@ -25,7 +25,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CuU-fT-eQm">
                                 <rect key="frame" x="12" y="16" width="261" height="55"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-person" translatesAutoresizingMaskIntoConstraints="NO" id="Idb-hO-aZ6">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_happy" translatesAutoresizingMaskIntoConstraints="NO" id="Idb-hO-aZ6">
                                         <rect key="frame" x="0.0" y="2.5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="2Ss-1d-5i1"/>
@@ -145,6 +145,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="default-person" width="128" height="128"/>
+        <image name="icon_happy" width="64" height="64"/>
     </resources>
 </document>
