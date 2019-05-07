@@ -37,7 +37,7 @@ class CreateDiaryVC: UIViewController {
             txtTitle.text = diaryDB.title
             tvContent.text = diaryDB.content
             date = diaryDB.publishedAt ?? Date()
-            self.btnTime.setTitle(self.date.stringBy(format: "dd/MM/YYYY"), for: .normal)
+            self.btnTime.setTitle(self.date.stringBy(format: "MM/dd/YYYY"), for: .normal)
             mood = diaryDB.mood ?? ""
             self.btnMood.setTitle(self.mood, for: .normal)
         }

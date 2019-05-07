@@ -106,7 +106,7 @@ class CreateWorkVC: UIViewController {
     @IBAction func btnTime(_ sender: Any) {
         PickerViewer.showDateTimePicker(date: Date()) { (response) in
             self.date = response?.date ?? self.date
-            self.btnTime.setTitle(self.date.stringBy(format: "dd/MM/YYYY"), for: .normal)
+            self.btnTime.setTitle(self.date.stringBy(format: "MM/dd/YYYY"), for: .normal)
         }
     }
     
