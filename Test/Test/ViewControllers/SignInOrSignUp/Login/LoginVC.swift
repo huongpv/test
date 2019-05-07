@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
         
         loginPresenter.login(email: email, password: password) { (error) in
             if let _ = error {
-                UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: "Lỗi sai tài khoản hoặc mật khẩu", cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
+                UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: "Account or password error", cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
             } else {
                 let tabbarVC = TabbarVC()
                 SystemBoots.instance.appDelegate?.changeRootViewControoler(viewController: tabbarVC)

@@ -129,12 +129,12 @@ extension Date {
     
     // Future
     private func formatInFuture() -> String {
-        return "Trong tương lai"
+        return "Future"
     }
     
     // Just now
     private func formatJustNow() -> String {
-        return "Bây giờ"
+        return "Now"
     }
     
     // < 1 hour = "x minutes ago"
@@ -144,9 +144,9 @@ extension Date {
         
         //Handle Plural
         if (minutesSince == 1) {
-            return "1 phút trước"
+            return "1 minute ago"
         } else {
-            return "\(minutesSince) phút trước"
+            return "\(minutesSince) minute ago"
         }
     }
     
@@ -157,9 +157,9 @@ extension Date {
         
         //Handle Plural
         if (hoursSince == 1) {
-            return "1 giờ trước"
+            return "1 hour ago"
         } else {
-            return "\(hoursSince) giờ trước"
+            return "\(hoursSince) hour ago"
         }
     }
     
@@ -168,14 +168,14 @@ extension Date {
         let formatter = DateFormatter()
         
         formatter.dateFormat = "h:mm a"
-        return "Hôm qua lúc \(formatter.string(from: self))"
+        return "Yesteday at \(formatter.string(from: self))"
     }
     
     // < Last 7 days = "Friday at 1:48 AM"
     private func formatAsLastWeek() -> String {
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "EEEE 'lúc' h:mm a"
+        formatter.dateFormat = "EEEE 'at' h:mm a"
         return formatter.string(from: self)
     }
     
@@ -183,7 +183,7 @@ extension Date {
     private func formatAsLastMonth() -> String {
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "dd MMMM 'lúc' h:mm a"
+        formatter.dateFormat = "dd MMMM 'at' h:mm a"
         return formatter.string(from: self)
     }
     

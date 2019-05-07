@@ -9,9 +9,9 @@
 import Foundation
 
 struct AlertKeys {
-    static let title = "Thông báo"
+    static let title = "Alert"
     static let cancelButton = "Ok"
     
-    static let emailFormat = "Email để trống hoặc sai định dạng"
-    static let passwordFormat = "Mật khẩu để trống hoặc sai định dạng. Cần ít nhất 6 kí tự, 1 chữ cái, 1 số và 1 kí tự đặc biệt"
+    static let emailFormat = "Email is empty or in the wrong format"
+    static let passwordFormat = "Password is blank or wrong format. Need at least 6 characters, 1 letter, 1 number and 1 special character"
 }

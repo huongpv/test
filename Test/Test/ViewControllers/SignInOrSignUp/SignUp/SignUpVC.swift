@@ -46,7 +46,7 @@ class SignUpVC: UIViewController {
 
         signupPresenter.signup(displayName: name ?? "", email: email, password: password) { (error) in
             if let _ = error {
-                UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: "Đăng kí không thành công, vui lòng đăng kí lại", cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
+                UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: "Registration is not successful, please register again", cancelButtonTitle: AlertKeys.cancelButton, handler: nil)
             } else {
                 let tabbarVC = TabbarVC()
                 SystemBoots.instance.appDelegate?.changeRootViewControoler(viewController: tabbarVC)

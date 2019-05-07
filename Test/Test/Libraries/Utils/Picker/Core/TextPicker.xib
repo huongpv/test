@@ -36,9 +36,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmX-nL-Ut6">
-                                    <rect key="frame" x="305" y="8" width="55" height="32"/>
+                                    <rect key="frame" x="330" y="8" width="30" height="32"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <state key="normal" title="Đồng ý">
+                                    <state key="normal" title="Yes">
                                         <color key="titleColor" red="0.1960784314" green="0.27450980390000002" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
@@ -46,9 +46,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bks-jK-AO7">
-                                    <rect key="frame" x="15" y="8" width="46" height="32"/>
+                                    <rect key="frame" x="15" y="8" width="54" height="32"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <state key="normal" title="Thoát">
+                                    <state key="normal" title="Cancel">
                                         <color key="titleColor" red="0.1960784314" green="0.27450980390000002" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>

@@ -67,8 +67,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NE-Ne-bwW">
                             <rect key="frame" x="0.0" y="75" width="315" height="55"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mật khẩu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPe-wP-2Lq">
-                                    <rect key="frame" x="0.0" y="0.0" width="71" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPe-wP-2Lq">
+                                    <rect key="frame" x="0.0" y="0.0" width="74" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                 <constraint firstAttribute="height" constant="40" id="Jsq-uB-8c7"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="Đăng nhập">
+                            <state key="normal" title="Sign In">
                                 <color key="titleColor" red="0.97819691896438599" green="0.45117908716201782" blue="0.11717783659696579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -125,7 +125,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nm2-19-pFf">
                             <rect key="frame" x="0.0" y="230" width="315" height="33"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="Quên mật khẩu">
+                            <state key="normal" title="Forgot password">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -243,18 +243,18 @@
                             <rect key="frame" x="0.0" y="517" width="315" height="40"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k9H-9r-byh">
-                                    <rect key="frame" x="35" y="0.0" width="245.5" height="40"/>
+                                    <rect key="frame" x="3" y="0.0" width="309.5" height="40"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn chưa có tài khoản?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05d-CJ-DPM">
-                                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="40"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05d-CJ-DPM">
+                                            <rect key="frame" x="0.0" y="0.0" width="235.5" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arA-b2-xcv">
-                                            <rect key="frame" x="187.5" y="0.0" width="58" height="40"/>
+                                            <rect key="frame" x="245.5" y="0.0" width="64" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Đăng kí">
+                                            <state key="normal" title="Register">
                                                 <color key="titleColor" red="0.97819691900000005" green="0.21919451051821476" blue="0.015740873414992886" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>

@@ -35,10 +35,10 @@ class ForgotPasswordVC: UIViewController {
         forgotPasswordPresenter.forgotPassword(email: email) { (error) in
             var message = ""
             if let _ = error {
-                message = "Lỗi phát sinh vui lòng thử lại"
+                message = "Error generated please try again"
                 print("Error \(error?.localizedDescription ?? "")")
             } else {
-                message = "Hệ thông đã gửi cho bạn email để lấy lại mật khẩu"
+                message = "The system sent you an email to retrieve your password"
             }
             
             UIAlertController.showQuickSystemAlert(target: self, title: AlertKeys.title, message: message, cancelButtonTitle: AlertKeys.cancelButton, handler: {

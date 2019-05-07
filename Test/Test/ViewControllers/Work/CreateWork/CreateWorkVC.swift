@@ -97,7 +97,7 @@ class CreateWorkVC: UIViewController {
     }
     
     @IBAction func btnMood(_ sender: Any) {
-        PickerViewer.showTextPicker(list: ["Hạnh phúc", "Vui vẽ", "Buồn bã", "Giận dữ"]) { (response) in
+        PickerViewer.showTextPicker(list: ["Happy", "Amused", "Depressed", "Annoyed"]) { (response) in
             self.mood = response?.stringValue ?? self.mood
             self.btnMood.setTitle(self.mood, for: .normal)
         }
